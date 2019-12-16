@@ -162,4 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FORCE_X_AXIS: 180
+  FORCE_Y_AXIS: 140
   direction: 0
+  NumberSplitPossible: 3
