@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidbody;
     private Vector2 inputs = Vector2.zero;
 
-
     // Méthodes
 
     // Start is called before the first frame update
