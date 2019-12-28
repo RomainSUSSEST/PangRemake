@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 1268007115728101132}
   - component: {fileID: 1268007115728101138}
   - component: {fileID: 6329894935332942820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnnemiBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6329894935332942820
 MonoBehaviour:
   m_ObjectHideFlags: 0
