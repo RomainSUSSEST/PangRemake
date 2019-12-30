@@ -16,7 +16,6 @@ public class BonusObjects : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collison)
     {
-        Debug.Log("On trigger");
         if (GameManager.Instance.IsPlaying && !m_Destroyed && collison.gameObject.CompareTag("Player"))
         {
             m_Destroyed = true;

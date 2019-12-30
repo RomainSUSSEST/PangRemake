@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3913319132058043423}
   - component: {fileID: -4404163869888438914}
   - component: {fileID: 2235624686992237496}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MOD_Watermelon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
