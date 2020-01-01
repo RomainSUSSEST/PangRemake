@@ -37,7 +37,7 @@ public class Shooting : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject Projectile = Instantiate(ProjectilesPrefab, SpawnProjectiles.transform);
+        GameObject Projectile = Instantiate(ProjectilesPrefab, SpawnProjectiles.transform.position, Quaternion.identity, null);
         Rigidbody2D ProjectileRb = Projectile.GetComponent<Rigidbody2D>();
         ProjectileRb.velocity = ProjectilesInitialSpeed * SpawnProjectiles.up;
 

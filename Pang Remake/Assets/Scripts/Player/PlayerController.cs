@@ -8,14 +8,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float speed;
 
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
     private Vector2 inputs = Vector2.zero;
 
     // Méthodes
 
     // Start is called before the first frame update
     private void Start() {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -29,12 +29,12 @@ public class PlayerController : MonoBehaviour
 
         if (inputs != Vector2.zero)
         {
-            transform.forward = new Vector3(0, 0, inputs.x);
+            transform.forward = new Vector3(0, 0, -inputs.x);
         }
     }
 
     private void FixedUpdate()
     {
-        rigidbody.MovePosition(rigidbody.position + inputs * speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + inputs * speed * Time.fixedDeltaTime);
     }
 }
