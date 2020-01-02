@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
 
     private Rigidbody2D rb;
+    private Animator animPlayer;
     private Vector2 inputs = Vector2.zero;
 
     // Méthodes
@@ -16,7 +17,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
-    }
+        animPlayer = GetComponent<Animator>();
+}
 
     // Update is called once per frame
     private void Update()
@@ -25,11 +27,15 @@ public class PlayerController : MonoBehaviour
 
         inputs = new Vector2(Input.GetAxis("Horizontal"), 0);
 
-        // On oriente le personnage en fonction
+        // On oriente le personnage en fonction et on anime le player (isWalking = true)
 
         if (inputs != Vector2.zero)
         {
-            transform.forward = new Vector3(0, 0, -inputs.x);
+            animPlayer.SetBool("IsWalking", true);
+            transform.forward = new Vector3(inputs.x, 0, 0);
+        } else
+        {
+            animPlayer.SetBool("IsWalking", false);
         }
     }
 
