@@ -12,10 +12,15 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float ProjectilesInitialSpeed;
 
     private float cmptRecast;
+    private Animator animPlayer;
 
 
     // Méthode
 
+    private void Start()
+    {
+        animPlayer = GetComponent<Animator>();
+    }
     private void Update()
     {
         // On incrémente cmpt recast de Time.DeltaTime pour
@@ -28,7 +33,7 @@ public class Shooting : MonoBehaviour
 
         if (isShooting && cmptRecast >= ShootingRecast)
         {
-            Shoot();
+            animPlayer.SetBool("IsShooting", true);
         }
     }
 
