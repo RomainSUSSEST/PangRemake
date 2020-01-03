@@ -5,7 +5,7 @@ using SDD.Events;
 
 public class BonusObjects : MonoBehaviour
 {
-    [SerializeField] int m_ObjectValue;
+    [SerializeField] float m_ObjectValue;
     [SerializeField] int m_LifeTime;
     protected bool m_Destroyed = false;
 
@@ -19,7 +19,7 @@ public class BonusObjects : MonoBehaviour
         if (GameManager.Instance.IsPlaying && !m_Destroyed && collison.gameObject.CompareTag("Player"))
         {
             m_Destroyed = true;
-
+            Debug.Log(m_ObjectValue);
             EventManager.Instance.Raise(new ScoreItemEvent() { eScore = m_ObjectValue });
             Destroy(this.gameObject);
         }

@@ -36,6 +36,7 @@ public class GameManager : Manager<GameManager>
 
 
 	#region Score
+	public Text currentScore;
 	private float m_Score;
 	public float Score
 	{
@@ -63,7 +64,10 @@ public class GameManager : Manager<GameManager>
 		Score = score;
 
 		if (raiseEvent)
+		{
 			EventManager.Instance.Raise(new GameStatisticsChangedEvent() { eBestScore = BestScore, eScore = m_Score, eNLives = m_NLives });
+			currentScore.text = m_Score.ToString();
+		}	
 	}
 	#endregion
 
