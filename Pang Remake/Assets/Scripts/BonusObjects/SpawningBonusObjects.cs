@@ -26,7 +26,7 @@ public class SpawningBonusObjects : MonoBehaviour
         int indexSpawn = random.Next(m_ListSpawners.Count);
         int delayBetweenSpawns = random.Next(5, 10);
 
-        GameObject bonusItem = Instantiate(m_ListObjects[indexObject], m_ListSpawners[indexSpawn].position, Quaternion.identity, null);
+        GameObject bonusItem = Instantiate(m_ListObjects[indexObject], m_ListSpawners[indexSpawn].position, m_ListObjects[indexObject].transform.rotation, null);
 
         yield return new WaitForSeconds(delayBetweenSpawns);
 

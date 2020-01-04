@@ -82,6 +82,7 @@ MonoBehaviour:
   m_ListObjects:
   - {fileID: 6805134062249945677, guid: 2826373572c6eb744b0d925e9db9fe69, type: 3}
   - {fileID: 2982174024753213860, guid: f04273d59e8e396419aa19828183955c, type: 3}
+  - {fileID: 1191017647115871643, guid: 7831682cde4d98545965d641e48e884b, type: 3}
   m_ListSpawners:
   - {fileID: 2706515501481536999}
   - {fileID: 2706515501853197342}

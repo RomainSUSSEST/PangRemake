@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2982174024753213860
+--- !u!1 &466668655743246217
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2249995108228858807}
-  - component: {fileID: 7089387223343577473}
-  - component: {fileID: 3557308746480600440}
-  - component: {fileID: 1379947548840970017}
-  - component: {fileID: 1469783048919406576}
-  - component: {fileID: 1852793133183412431}
+  - component: {fileID: 2033228790628868255}
+  - component: {fileID: 539355555067152901}
+  - component: {fileID: 5153538924795959975}
   m_Layer: 10
-  m_Name: StrawBerry
+  m_Name: gfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2249995108228858807
+--- !u!4 &2033228790628868255
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2982174024753213860}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.462, y: -10.836, z: 0.3373}
-  m_LocalScale: {x: 1.9506, y: 1.9506, z: 1.9506}
+  m_GameObject: {fileID: 466668655743246217}
+  m_LocalRotation: {x: 0, y: -0.9902681, z: 0, w: 0.13917318}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2249995108228858807}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7089387223343577473
+  m_LocalEulerAnglesHint: {x: 0, y: -164, z: 0}
+--- !u!33 &539355555067152901
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2982174024753213860}
+  m_GameObject: {fileID: 466668655743246217}
   m_Mesh: {fileID: 1013006867569979, guid: 06007930566873744a73cead4338b250, type: 3}
---- !u!23 &3557308746480600440
+--- !u!23 &5153538924795959975
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2982174024753213860}
+  m_GameObject: {fileID: 466668655743246217}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -82,6 +79,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &2982174024753213860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2249995108228858807}
+  - component: {fileID: 1379947548840970017}
+  - component: {fileID: 1469783048919406576}
+  - component: {fileID: 1852793133183412431}
+  m_Layer: 10
+  m_Name: StrawBerry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2249995108228858807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2982174024753213860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.462, y: -10.836, z: 0}
+  m_LocalScale: {x: 1.9506, y: 1.9506, z: 1.9506}
+  m_Children:
+  - {fileID: 2033228790628868255}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1379947548840970017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +147,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!61 &1852793133183412431
 BoxCollider2D:
   m_ObjectHideFlags: 0
