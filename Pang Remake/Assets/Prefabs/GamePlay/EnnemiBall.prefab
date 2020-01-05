@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6329894935332942820}
   m_Layer: 9
   m_Name: EnnemiBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 1268007115728101133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.02, y: -4.13, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1268007114789495234}
   m_Father: {fileID: 0}
@@ -164,4 +164,5 @@ MonoBehaviour:
   FORCE_X_AXIS: 180
   FORCE_Y_AXIS: 140
   direction: 0
-  NumberSplitPossible: 3
+  RemainingSplit: 4
+  BallsStep: {fileID: 0}
