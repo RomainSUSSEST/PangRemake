@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         if (isShooting)
         {
             inputs = Vector2.zero;
+            transform.forward = new Vector3(0, 0, 1); // On oriente le joueur vers le décor
         } else
         {
 

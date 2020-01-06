@@ -9,7 +9,6 @@ public class Shooting : MonoBehaviour
     [SerializeField] private GameObject ProjectilesPrefab;
     [SerializeField] private Transform SpawnProjectiles;
     [SerializeField] private float ShootingRecast; // En seconde
-    [SerializeField] private float ProjectilesInitialSpeed;
 
     private float cmptRecast;
     private Animator animPlayer;
@@ -43,8 +42,6 @@ public class Shooting : MonoBehaviour
     private void Shoot()
     {
         GameObject Projectile = Instantiate(ProjectilesPrefab, SpawnProjectiles.transform.position, Quaternion.identity, null);
-        Rigidbody2D ProjectileRb = Projectile.GetComponent<Rigidbody2D>();
-        ProjectileRb.velocity = ProjectilesInitialSpeed * SpawnProjectiles.up;
 
         // On réinitialise le recast
         cmptRecast = 0;

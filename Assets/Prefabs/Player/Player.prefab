@@ -320,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912988760109488419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8882226294643777983}
@@ -1006,11 +1006,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4800376e8840f31468fa007953e48cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilesPrefab: {fileID: 3578117906293505582, guid: fc724ffc33ac202459f0fa79ce2c2b58,
+  ProjectilesPrefab: {fileID: 4702815072315683083, guid: 0b5073c63ea8a704992450372969619f,
     type: 3}
   SpawnProjectiles: {fileID: 5028086266884040317}
   ShootingRecast: 1
-  ProjectilesInitialSpeed: 7.31
 --- !u!114 &5430604520494409836
 MonoBehaviour:
   m_ObjectHideFlags: 0
