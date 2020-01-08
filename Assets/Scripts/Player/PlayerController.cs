@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
 
     private Rigidbody2D rb;
-    private Animator animPlayer;
+    private Animator AnimPlayer;
     private Vector2 inputs = Vector2.zero;
     private bool isShooting; // Variable indiquant si oui ou non le player est entrain de tirer.
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
-        animPlayer = GetComponent<Animator>();
+        AnimPlayer = GetComponent<Animator>();
 }
 
     // Update is called once per frame
@@ -42,12 +42,12 @@ public class PlayerController : MonoBehaviour
 
             if (inputs != Vector2.zero)
             {
-                animPlayer.SetBool("IsWalking", true);
+                AnimPlayer.SetBool("IsWalking", true);
                 transform.forward = new Vector3(inputs.x, 0, 0);
             }
             else
             {
-                animPlayer.SetBool("IsWalking", false);
+                AnimPlayer.SetBool("IsWalking", false);
             }
         }
     }
@@ -58,15 +58,16 @@ public class PlayerController : MonoBehaviour
     }
 
     
-    // Fonction appelé par évenement
-    private void shootStart()
+    // Fonctions appelé par évenement dans l'animation de tire
+    private void ShootStart()
     {
         isShooting = true;
+        transform.forward = new Vector3(0, 0, 1); // On oriente le joueur vers le décor
     }
 
-    private void shootEnd()
+    private void ShootEnd()
     {
         isShooting = false;
-        animPlayer.SetBool("IsShooting", false);
+        AnimPlayer.SetBool("IsShooting", false);
     }
 }

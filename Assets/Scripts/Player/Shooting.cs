@@ -8,42 +8,68 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] private GameObject ProjectilesPrefab;
     [SerializeField] private Transform SpawnProjectiles;
-    [SerializeField] private float ShootingRecast; // En seconde
 
-    private float cmptRecast;
-    private Animator animPlayer;
+    private int MaxNbrGrapnel;
+    private int CurrentNbrGrapnel;
+
+    private Animator AnimPlayer;
+
+
+    // Requête
+
+    public int GetMaxNbrGrapnel()
+    {
+        return MaxNbrGrapnel;
+    }
 
 
     // Méthode
 
     private void Start()
     {
-        animPlayer = GetComponent<Animator>();
+        AnimPlayer = GetComponent<Animator>();
+
+        // On initialise le nombre max de grappin à 1
+
+        MaxNbrGrapnel = 1;
     }
-    private void Update()
-    {
-        // On incrémente cmpt recast de Time.DeltaTime pour
-        // avoir un recast indépendant de la puissance de la machine et en seconde.
-        cmptRecast += Time.deltaTime;
-    }
+
     private void FixedUpdate()
     {
         bool isShooting = Input.GetAxis("Fire1") == 1;
 
-        if (isShooting && cmptRecast >= ShootingRecast)
+        if (isShooting && CurrentNbrGrapnel < MaxNbrGrapnel)
         {
-            animPlayer.SetBool("IsShooting", true);
+            AnimPlayer.SetBool("IsShooting", true);
         }
+    }
+
+    public void SetMaxNbrGrapnel(int max)
+    {
+        if (max > 0)
+        {
+            MaxNbrGrapnel = max;
+        } else
+        {
+            Debug.LogError("SetMaxNbrGrapnel valeur incorrecte donnée.");
+        }
+    }
+
+
+    // Appelé par evenement
+    private void Shoot()
+    {
+        GameObject Grapnel = Instantiate(ProjectilesPrefab, SpawnProjectiles.transform.position, Quaternion.identity, null);
+        Grapnel.GetComponent<GrapnelScript>().Initiate(KillGrapnel);
+
+        CurrentNbrGrapnel += 1;
     }
 
 
     // Outils
 
-    private void Shoot()
+    private void KillGrapnel()
     {
-        GameObject Projectile = Instantiate(ProjectilesPrefab, SpawnProjectiles.transform.position, Quaternion.identity, null);
-
-        // On réinitialise le recast
-        cmptRecast = 0;
+        CurrentNbrGrapnel -= 1;
     }
 }

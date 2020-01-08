@@ -16,7 +16,7 @@ public class BonusObjects : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collison)
     {
-        if (GameManager.Instance.IsPlaying && !m_Destroyed && collison.gameObject.CompareTag("Player"))
+        if (GameManager.Instance.IsPlaying && !m_Destroyed && collison.gameObject.CompareTag(Tags.PLAYER))
         {
             m_Destroyed = true;
             EventManager.Instance.Raise(new ScoreItemEvent() { eScore = m_ObjectValue });
