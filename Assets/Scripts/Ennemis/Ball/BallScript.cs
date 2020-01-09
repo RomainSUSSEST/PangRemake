@@ -6,10 +6,11 @@ public class BallScript : MonoBehaviour
 {
     // Constante
 
-    private readonly float COEFF_NEW_SIZE = 1.5f;
-    private readonly float DISTANCE_REPOP_X = 1 / 2f; // En nombre de fois la corpulance de la boule
-    private readonly float DISTANCE_REPOP_Y = 1 / 2f; // En nombre de fois la corpulance de la boule
-    private readonly float BOOST = 10; // Coups de boost donné à la balle si celle-ci est en dessous de la ligne sur laquel elle devrait être
+    private static readonly float COEFF_NEW_SIZE = 1.5f;
+    private static readonly float DISTANCE_REPOP_X = 1 / 2f; // En nombre de fois la corpulance de la boule
+    private static readonly float DISTANCE_REPOP_Y = 1 / 2f; // En nombre de fois la corpulance de la boule
+    private static readonly float BOOST = 10; // Coups de boost donné à la balle si celle-ci est en dessous de la ligne sur laquel elle devrait être
+    private static readonly System.Random random = new System.Random();
 
 
     // Attributs
@@ -19,6 +20,7 @@ public class BallScript : MonoBehaviour
     [SerializeField] private Direction.DirectionValue direction; // Direction de départ
     [SerializeField] private int RemainingSplit = 4; // Nombre de scission possible
     [SerializeField] private GameObject BallsStep;
+    [SerializeField] private List<GameObject> BonusObjectList;
 
     private Rigidbody2D rb;
 
@@ -38,7 +40,7 @@ public class BallScript : MonoBehaviour
 
         if (ballStep.position.y > this.transform.position.y)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -BOOST);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, BOOST);
         }
     }
 
@@ -109,12 +111,27 @@ public class BallScript : MonoBehaviour
                     this.RemainingSplit - 1);
                 ballRight.GetComponent<BallScript>().InitiateObject(Direction.DirectionValue.RIGHT,
                     this.RemainingSplit - 1);
+
+                // On fait fait un random pour savoir si l'on fait pop ou non un objet bonus.
+                
+                int maxValue = GetRemainingSplit() * GetRemainingSplit() - 9 * GetRemainingSplit() + 22; // Par interpolation de Lagrange sur f(2)=8, f(3)=4, f(4)=2
+                int randomValue = random.Next(1, maxValue + 1);
+
+                if (randomValue == 1 && BonusObjectList.Count != 0) // Représente pour GetRemainingSplit() = 4, 1/2 chance.
+                                                       //                 GetRemainingSplit() = 3, 1/4 chance
+                                                       //                 GetRemainingSplit() = 2, 1/8 chance                              
+                {
+
+                    // Si la chance sourit, on spawn un objet bonus.
+                    int indexObject = random.Next(BonusObjectList.Count);
+                    Instantiate(BonusObjectList[indexObject], transform.position, BonusObjectList[indexObject].transform.rotation, null);
+                }
             }
-           
+
 
             // On détruit les éléments this & le projectile
 
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<GrapnelScript>().Kill();
             Destroy(this.gameObject);
         }
     }

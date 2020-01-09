@@ -13,7 +13,7 @@ public class SpawningBonusObjects : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(random.Next(10, 30));
 
         m_SpawningItems = SpawningItems();
 
@@ -24,7 +24,7 @@ public class SpawningBonusObjects : MonoBehaviour
     {
         int indexObject = random.Next(m_ListObjects.Count);
         int indexSpawn = random.Next(m_ListSpawners.Count);
-        int delayBetweenSpawns = random.Next(5, 10);
+        int delayBetweenSpawns = random.Next(10, 30);
 
         GameObject bonusItem = Instantiate(m_ListObjects[indexObject], m_ListSpawners[indexSpawn].position, m_ListObjects[indexObject].transform.rotation, null);
 

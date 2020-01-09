@@ -9,6 +9,16 @@ public class GrapnelScript : MonoBehaviour
     [SerializeField] private float ExpansionSpeed;
     [SerializeField] private float RotationSpeed;
 
+    private System.Action KillFunction;
+
+
+    // 'Constructeur'
+
+    public void Initiate(System.Action KillFunction)
+    {
+        this.KillFunction = KillFunction;
+    }
+
 
     // Méthode
 
@@ -18,5 +28,12 @@ public class GrapnelScript : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + Time.deltaTime * ExpansionSpeed,
                 transform.localScale.z);
         transform.localRotation = new Quaternion(0, transform.localRotation.y + Time.deltaTime * RotationSpeed, 0, 0);
+    }
+
+    // Permet de détruire proprement le Grapnel
+    public void Kill()
+    {
+        KillFunction();
+        Destroy(this.gameObject);
     }
 }

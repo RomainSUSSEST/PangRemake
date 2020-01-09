@@ -166,3 +166,5 @@ MonoBehaviour:
   direction: 0
   RemainingSplit: 4
   BallsStep: {fileID: 0}
+  BonusObjectList:
+  - {fileID: 978263654855953166, guid: 1c394c3547bce8f4998d964104c6d700, type: 3}
