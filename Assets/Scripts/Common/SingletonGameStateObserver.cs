@@ -57,7 +57,7 @@ public abstract class SingletonGameStateObserver<T> :  Singleton<T>,IEventHandle
 
 	protected virtual void GameOver(GameOverEvent e)
 	{
-	}
+    }
 
 	protected virtual void GameVictory(GameVictoryEvent e)
 	{
@@ -66,6 +66,4 @@ public abstract class SingletonGameStateObserver<T> :  Singleton<T>,IEventHandle
 	protected virtual void GameStatisticsChanged(GameStatisticsChangedEvent e)
 	{
 	}
-
-
 }

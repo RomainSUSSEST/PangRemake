@@ -32,11 +32,10 @@ public class GameManager : Manager<GameManager>
 		m_NLives = nLives;
 		EventManager.Instance.Raise(new GameStatisticsChangedEvent() { eBestScore = BestScore, eScore = m_Score, eNLives = m_NLives});
 	}
-	#endregion
+    #endregion
 
 
-	#region Score
-	public Text currentScore;
+    #region Score
 	private float m_Score;
 	public float Score
 	{
@@ -66,7 +65,6 @@ public class GameManager : Manager<GameManager>
 		if (raiseEvent)
 		{
 			EventManager.Instance.Raise(new GameStatisticsChangedEvent() { eBestScore = BestScore, eScore = m_Score, eNLives = m_NLives });
-			currentScore.text = m_Score.ToString();
 		}	
 	}
 	#endregion
@@ -90,9 +88,10 @@ public class GameManager : Manager<GameManager>
 		EventManager.Instance.AddListener<ResumeButtonClickedEvent>(ResumeButtonClicked);
 		EventManager.Instance.AddListener<EscapeButtonClickedEvent>(EscapeButtonClicked);
 		EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitButtonClicked);
+        EventManager.Instance.AddListener<HighscoresButtonClickedEvent>(HighscoresButtonClicked);
 
-		//Score Item
-		EventManager.Instance.AddListener<ScoreItemEvent>(ScoreHasBeenGained);
+        //Score Item
+        EventManager.Instance.AddListener<ScoreItemEvent>(ScoreHasBeenGained);
 	}
 
 	public override void UnsubscribeEvents()
@@ -105,9 +104,10 @@ public class GameManager : Manager<GameManager>
 		EventManager.Instance.RemoveListener<ResumeButtonClickedEvent>(ResumeButtonClicked);
 		EventManager.Instance.RemoveListener<EscapeButtonClickedEvent>(EscapeButtonClicked);
 		EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitButtonClicked);
+        EventManager.Instance.RemoveListener<HighscoresButtonClickedEvent>(HighscoresButtonClicked);
 
-		//Score Item
-		EventManager.Instance.RemoveListener<ScoreItemEvent>(ScoreHasBeenGained);
+        //Score Item
+        EventManager.Instance.RemoveListener<ScoreItemEvent>(ScoreHasBeenGained);
 	}
 	#endregion
 
@@ -115,7 +115,7 @@ public class GameManager : Manager<GameManager>
 	protected override IEnumerator InitCoroutine()
 	{
 		Menu();
-		InitNewGame(); // essentiellement pour que les statistiques du jeu soient mise à jour en HUD
+		InitNewGame(); // Essentiellement pour que les statistiques du jeu soient mise à jour en HUD
 		yield break;
 	}
 	#endregion
@@ -157,7 +157,13 @@ public class GameManager : Manager<GameManager>
 		if (IsPlaying) Pause();
 	}
 
-	private void QuitButtonClicked(QuitButtonClickedEvent e)
+    private void HighscoresButtonClicked(HighscoresButtonClickedEvent e)
+    {
+        // TO DO
+        Debug.Log("Highscores button is not set yet !");
+    }
+
+    private void QuitButtonClicked(QuitButtonClickedEvent e)
 	{
 		Application.Quit();
 	}
@@ -166,7 +172,7 @@ public class GameManager : Manager<GameManager>
 	#region GameState methods
 	private void Menu()
 	{
-		SetTimeScale(1);
+		SetTimeScale(0);
 		m_GameState = GameState.gameMenu;
 		if(MusicLoopsManager.Instance)MusicLoopsManager.Instance.PlayMusic(Constants.MENU_MUSIC);
 		EventManager.Instance.Raise(new GameMenuEvent());

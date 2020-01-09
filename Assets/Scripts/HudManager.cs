@@ -1,32 +1,41 @@
-﻿namespace STUDENT_NAME
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using SDD.Events;
+
+public class HudManager : Manager<HudManager>
 {
-	using System.Collections;
-	using System.Collections.Generic;
-	using UnityEngine;
-	using UnityEngine.UI;
-	using SDD.Events;
 
-	public class HudManager : Manager<HudManager>
+    //[Header("HudManager")]
+    #region Labels & Values
+    [SerializeField] Text currentScore;
+    [SerializeField] GameObject HUDPanel;
+    #endregion
+
+    #region Manager implementation
+    protected override IEnumerator InitCoroutine()
 	{
-
-		//[Header("HudManager")]
-		#region Labels & Values
-		// TO DO
-		#endregion
-
-		#region Manager implementation
-		protected override IEnumerator InitCoroutine()
-		{
-			yield break;
-		}
-		#endregion
-
-		#region Callbacks to GameManager events
-		protected override void GameStatisticsChanged(GameStatisticsChangedEvent e)
-		{
-			//TO DO
-		}
-		#endregion
-
+		yield break;
 	}
+	#endregion
+
+	#region Callbacks to GameManager events
+	protected override void GameStatisticsChanged(GameStatisticsChangedEvent e)
+	{
+        float m_Score = GameManager.Instance.Score;
+        currentScore.text = m_Score.ToString();
+    }
+    #endregion
+
+    #region Show & Hide HUD
+    void ShowHideHUD()
+    {
+        if ()
+        {
+
+        }
+    }
+    #endregion
+
 }

@@ -44,9 +44,12 @@ public class ResumeButtonClickedEvent : SDD.Events.Event
 public class MainMenuButtonClickedEvent : SDD.Events.Event
 {
 }
-
+public class HighscoresButtonClickedEvent : SDD.Events.Event
+{
+}
 public class QuitButtonClickedEvent : SDD.Events.Event
-{ }
+{
+}
 #endregion
 
 #region Score Event

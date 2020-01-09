@@ -22,10 +22,5 @@ public class BonusObjects : MonoBehaviour
             EventManager.Instance.Raise(new ScoreItemEvent() { eScore = m_ObjectValue });
             Destroy(this.gameObject);
         }
-
-        /*if (collision.gameObject.CompareTag("BonusObject"))
-        {
-            Destroy(this.gameObject);
-        }*/
     }
 }
