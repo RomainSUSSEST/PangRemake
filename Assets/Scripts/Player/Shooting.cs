@@ -34,13 +34,13 @@ public class Shooting : MonoBehaviour
         MaxNbrGrapnel = 1;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        bool isShooting = Input.GetAxis("Fire1") == 1;
+        bool isShooting = Input.GetButtonDown("Fire1");
 
-        if (isShooting && CurrentNbrGrapnel < MaxNbrGrapnel)
+        if (isShooting && CurrentNbrGrapnel < MaxNbrGrapnel && !AnimPlayer.GetBool("IsShooting"))
         {
-            AnimPlayer.SetBool("IsShooting", true);
+            AnimPlayer.SetTrigger("IsShooting");
         }
     }
 

@@ -40,7 +40,7 @@ public class BallScript : MonoBehaviour
 
         if (ballStep.position.y > this.transform.position.y)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -BOOST);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, BOOST);
         }
     }
 
@@ -116,7 +116,7 @@ public class BallScript : MonoBehaviour
                 
                 int maxValue = GetRemainingSplit() * GetRemainingSplit() - 9 * GetRemainingSplit() + 22; // Par interpolation de Lagrange sur f(2)=8, f(3)=4, f(4)=2
                 int randomValue = random.Next(1, maxValue + 1);
-                Debug.Log(randomValue);
+
                 if (randomValue == 1 && BonusObjectList.Count != 0) // Représente pour GetRemainingSplit() = 4, 1/2 chance.
                                                        //                 GetRemainingSplit() = 3, 1/4 chance
                                                        //                 GetRemainingSplit() = 2, 1/8 chance                              

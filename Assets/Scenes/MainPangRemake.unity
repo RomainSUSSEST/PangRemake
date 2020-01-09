@@ -414,6 +414,11 @@ PrefabInstance:
       propertyPath: m_UsedByEffector
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6055558617180658731, guid: e28ca142be4a1324ea8a329037cf5f9a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.51
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28ca142be4a1324ea8a329037cf5f9a, type: 3}
 --- !u!1 &450024928
