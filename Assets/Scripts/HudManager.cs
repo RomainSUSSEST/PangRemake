@@ -31,10 +31,10 @@ public class HudManager : Manager<HudManager>
     #region Show & Hide HUD
     void ShowHideHUD()
     {
-        if ()
-        {
+        //if ()
+        //{
 
-        }
+        //}
     }
     #endregion
 
