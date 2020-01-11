@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallScript : MonoBehaviour
+public class BallScript : Ball
 {
     // Constante
 
@@ -27,18 +27,20 @@ public class BallScript : MonoBehaviour
 
     // "Constructeur"
 
-    public void InitiateObject(Direction.DirectionValue direction, int nbrSplit)
+    public override void InitiateObject(Direction.DirectionValue direction, int nbrSplit)
     {
         this.direction = direction;
         this.RemainingSplit = nbrSplit;
 
-        // On récupére le ball step associé aux nombres de split restant
+        // On récupére le ball step associé aux nombres de split restant (Le ball step corresponds à des étapes de hauteur sur la carte)
 
         Transform ballStep = GetBallStepAssociate();
 
-        // Si le ball step est au dessus de la ball, on lui donne un peu d'élan
-
-        if (ballStep.position.y > this.transform.position.y)
+        // Si le bas du ball step est au dessus du haut de la ball, on lui donne un peu d'élan
+        // Position du haut de la ball
+        float BallTopPosition = this.transform.position.y + this.transform.localScale.y / 2; // Car le pivot est au centre.
+        float BallSptepBottomPosition = ballStep.position.y - ballStep.localScale.y / 2; // Car le pivot est au centre.
+        if (BallSptepBottomPosition > BallTopPosition)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, BOOST);
         }
@@ -55,8 +57,10 @@ public class BallScript : MonoBehaviour
 
     // Méthodes
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         rb = GetComponent<Rigidbody2D>();
 
         Vector2 movement = new Vector2(Direction.GetValue(direction), 0) * FORCE_X_AXIS;
@@ -72,68 +76,72 @@ public class BallScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES))
         {
-            if (RemainingSplit > 1)
-            {
-                // CALCUL DES NOUVELLES POSITIONS DES BOULES
-
-                // y = position de le boule + 3/4 de sa corpulence
-                float y = this.transform.position.y + DISTANCE_REPOP_Y * this.transform.localScale.y;
-
-                // On calcul le x pour la boule de gauche = position de la boule - 3 / 4 de sa corpulence
-                float xLeft = this.transform.position.x - DISTANCE_REPOP_X * this.transform.localScale.x;
-
-                // On calcul le x pour la boule de droite = position de la boule + 3 / 4 de sa corpulence
-                float xRight = this.transform.position.x + DISTANCE_REPOP_X * this.transform.localScale.x;
-
-
-                // CALCUL DES NOUVELLES TAILLES DES BOULES
-
-                float scaleX = this.transform.localScale.x / COEFF_NEW_SIZE;
-                float scaleY = this.transform.localScale.y / COEFF_NEW_SIZE;
-                float scaleZ = this.transform.localScale.z;
-
-
-                // INSTANTIATION DES NOUVELLES BOULES
-                Vector3 positionLeft = new Vector3(xLeft, y, this.transform.position.z);
-                Vector3 positionRight = new Vector3(xRight, y, this.transform.position.z);
-
-                GameObject ballLeft = Instantiate(this.gameObject, positionLeft, Quaternion.identity);
-                GameObject ballRight = Instantiate(this.gameObject, positionRight, Quaternion.identity);
-
-                // On redimensionne les 2 boules
-
-                ballLeft.GetComponent<Transform>().localScale = new Vector3(scaleX, scaleY, scaleZ);
-                ballRight.GetComponent<Transform>().localScale = new Vector3(scaleX, scaleY, scaleZ);
-
-                // On initialise les objets
-
-                ballLeft.GetComponent<BallScript>().InitiateObject(Direction.DirectionValue.LEFT,
-                    this.RemainingSplit - 1);
-                ballRight.GetComponent<BallScript>().InitiateObject(Direction.DirectionValue.RIGHT,
-                    this.RemainingSplit - 1);
-
-                // On fait fait un random pour savoir si l'on fait pop ou non un objet bonus.
-                
-                int maxValue = GetRemainingSplit() * GetRemainingSplit() - 9 * GetRemainingSplit() + 22; // Par interpolation de Lagrange sur f(2)=8, f(3)=4, f(4)=2
-                int randomValue = random.Next(1, maxValue + 1);
-
-                if (randomValue == 1 && BonusObjectList.Count != 0) // Représente pour GetRemainingSplit() = 4, 1/2 chance.
-                                                       //                 GetRemainingSplit() = 3, 1/4 chance
-                                                       //                 GetRemainingSplit() = 2, 1/8 chance                              
-                {
-
-                    // Si la chance sourit, on spawn un objet bonus.
-                    int indexObject = random.Next(BonusObjectList.Count);
-                    Instantiate(BonusObjectList[indexObject], transform.position, BonusObjectList[indexObject].transform.rotation, null);
-                }
-            }
-
-
             // On détruit les éléments this & le projectile
 
             collision.gameObject.GetComponent<GrapnelScript>().Kill();
-            Destroy(this.gameObject);
+            this.Kill();
         }
+    }
+
+    public override void Kill()
+    {
+        if (RemainingSplit > 1)
+        {
+            // CALCUL DES NOUVELLES POSITIONS DES BOULES
+
+            // y = position de le boule + 3/4 de sa corpulence
+            float y = this.transform.position.y + DISTANCE_REPOP_Y * this.transform.localScale.y;
+
+            // On calcul le x pour la boule de gauche = position de la boule - 3 / 4 de sa corpulence
+            float xLeft = this.transform.position.x - DISTANCE_REPOP_X * this.transform.localScale.x;
+
+            // On calcul le x pour la boule de droite = position de la boule + 3 / 4 de sa corpulence
+            float xRight = this.transform.position.x + DISTANCE_REPOP_X * this.transform.localScale.x;
+
+
+            // CALCUL DES NOUVELLES TAILLES DES BOULES
+
+            float scaleX = this.transform.localScale.x / COEFF_NEW_SIZE;
+            float scaleY = this.transform.localScale.y / COEFF_NEW_SIZE;
+            float scaleZ = this.transform.localScale.z;
+
+
+            // INSTANTIATION DES NOUVELLES BOULES
+            Vector3 positionLeft = new Vector3(xLeft, y, this.transform.position.z);
+            Vector3 positionRight = new Vector3(xRight, y, this.transform.position.z);
+
+            GameObject ballLeft = Instantiate(this.gameObject, positionLeft, Quaternion.identity);
+            GameObject ballRight = Instantiate(this.gameObject, positionRight, Quaternion.identity);
+
+            // On redimensionne les 2 boules
+
+            ballLeft.GetComponent<Transform>().localScale = new Vector3(scaleX, scaleY, scaleZ);
+            ballRight.GetComponent<Transform>().localScale = new Vector3(scaleX, scaleY, scaleZ);
+
+            // On initialise les objets
+
+            ballLeft.GetComponent<BallScript>().InitiateObject(Direction.DirectionValue.LEFT,
+                this.RemainingSplit - 1);
+            ballRight.GetComponent<BallScript>().InitiateObject(Direction.DirectionValue.RIGHT,
+                this.RemainingSplit - 1);
+
+            // On fait fait un random pour savoir si l'on fait pop ou non un objet bonus.
+
+            int maxValue = GetRemainingSplit() * GetRemainingSplit() - 9 * GetRemainingSplit() + 22; // Par interpolation de Lagrange sur f(2)=8, f(3)=4, f(4)=2
+            int randomValue = random.Next(1, maxValue + 1);
+
+            if (randomValue == 1 && BonusObjectList.Count != 0) // Représente pour GetRemainingSplit() = 4, 1/2 chance.
+                                                                //                 GetRemainingSplit() = 3, 1/4 chance
+                                                                //                 GetRemainingSplit() = 2, 1/8 chance                              
+            {
+
+                // Si la chance sourit, on spawn un objet bonus.
+                int indexObject = random.Next(BonusObjectList.Count);
+                Instantiate(BonusObjectList[indexObject], transform.position, BonusObjectList[indexObject].transform.rotation, null);
+            }
+        }
+
+        base.Kill();
     }
 
 
