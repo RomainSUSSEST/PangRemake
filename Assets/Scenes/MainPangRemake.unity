@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22478154, g: 0.2512765, b: 0.32197466, a: 1}
+  m_IndirectSpecularColor: {r: 0.22485095, g: 0.2513121, b: 0.3221126, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -216,16 +216,6 @@ PrefabInstance:
       propertyPath: m_TimeLeft
       value: 60
       objectReference: {fileID: 0}
-    - target: {fileID: 114746243097493696, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_Clips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 225237505bd2d08448e734986949ab5a, type: 3}
-    - target: {fileID: 114746243097493696, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_Clips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 18fc0e399ffc63641b8c4cb50030cd6c, type: 3}
     - target: {fileID: 114331011742233390, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
         type: 3}
       propertyPath: m_ResourcesFolderName
@@ -497,6 +487,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1495724557374161970, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 3653e388e6b864a7cb27a0f1037f689e, type: 3}
+    - target: {fileID: 1495724557385687332, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1495724556231352064, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
         type: 3}
       propertyPath: m_IsActive
@@ -721,16 +721,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 429
-      objectReference: {fileID: 0}
-    - target: {fileID: 1495724557374161970, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
-        type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 3653e388e6b864a7cb27a0f1037f689e, type: 3}
-    - target: {fileID: 1495724557385687332, guid: 2d4cc07e22d85374b8d15cd15f4e18e1,
-        type: 3}
-      propertyPath: m_Text
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d4cc07e22d85374b8d15cd15f4e18e1, type: 3}

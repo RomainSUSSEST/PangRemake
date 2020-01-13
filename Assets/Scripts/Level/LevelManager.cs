@@ -76,6 +76,11 @@ public class LevelManager : Manager<LevelManager>
 		Destroy(currentPlayer1);
 	}
 
+	protected override void GameOver(GameOverEvent e)
+	{
+		CurrentLevelIndex = 0;
+	}
+
 	protected void GoToNextLevel(GoToNextLevelEvent e)
 	{
 		++CurrentLevelIndex;
