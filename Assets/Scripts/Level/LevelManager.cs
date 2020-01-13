@@ -66,19 +66,16 @@ public class LevelManager : Manager<LevelManager>
 			Destroy(CurrentLevel);
 		}
 
+		CurrentLevelIndex = 0;
+
 		currentPlayer1 = Instantiate(PlayerPrefab);
-		InstantiateLevel(0);
+		InstantiateLevel(CurrentLevelIndex);
 	}
 
 	protected override void GameMenu(GameMenuEvent e)
 	{
 		Destroy(CurrentLevel);
 		Destroy(currentPlayer1);
-	}
-
-	protected override void GameOver(GameOverEvent e)
-	{
-		CurrentLevelIndex = 0;
 	}
 
 	protected void GoToNextLevel(GoToNextLevelEvent e)
