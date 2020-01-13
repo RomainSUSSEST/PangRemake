@@ -206,8 +206,6 @@ PrefabInstance:
       propertyPath: HUDPanel
       value: 
       objectReference: {fileID: 1278737688}
-<<<<<<< HEAD
-=======
     - target: {fileID: 114721918857949744, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
         type: 3}
       propertyPath: m_WeaponIcon
@@ -228,7 +226,6 @@ PrefabInstance:
       propertyPath: m_Clips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 18fc0e399ffc63641b8c4cb50030cd6c, type: 3}
->>>>>>> 0376790e4b76ce4946511fcf211383188a5dfae1
     - target: {fileID: 114331011742233390, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
         type: 3}
       propertyPath: m_ResourcesFolderName

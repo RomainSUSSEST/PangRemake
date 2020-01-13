@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPlayer1: {fileID: 5768063010289246659}
-  m_TimeLeft: 10
+  m_TimeLeft: 100
 --- !u!1001 &626178592969172232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,11 +573,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 2706515500768644086, guid: 2a758b7cbb104c747aba22c846222ad3,
-        type: 3}
-      propertyPath: m_Name
-      value: ObjectsSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 2706515500768644084, guid: 2a758b7cbb104c747aba22c846222ad3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -637,6 +632,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706515500768644086, guid: 2a758b7cbb104c747aba22c846222ad3,
+        type: 3}
+      propertyPath: m_Name
+      value: ObjectsSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2706515501025461850, guid: 2a758b7cbb104c747aba22c846222ad3,
         type: 3}
@@ -713,11 +713,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 6268919843679825557, guid: f0e456d70f5bd3344b15edbc74869490,
-        type: 3}
-      propertyPath: m_Name
-      value: World1_Japan
-      objectReference: {fileID: 0}
     - target: {fileID: 3553269179646084384, guid: f0e456d70f5bd3344b15edbc74869490,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -772,6 +767,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268919843679825557, guid: f0e456d70f5bd3344b15edbc74869490,
+        type: 3}
+      propertyPath: m_Name
+      value: World1_Japan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0e456d70f5bd3344b15edbc74869490, type: 3}
