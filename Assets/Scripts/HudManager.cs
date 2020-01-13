@@ -35,6 +35,11 @@ public class HudManager : Manager<HudManager>
         ShowHUD();
     }
 
+    protected override void GameResume(GameResumeEvent e)
+    {
+        ShowHUD();
+    }
+
     protected override void GameMenu(GameMenuEvent e)
     {
         HideHUD();

@@ -54,7 +54,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4533aa845f919740b7a93acf236a678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CountdownTimer: {fileID: 0}
   SpawnPlayer1: {fileID: 437990965193222499}
+  m_TimeLeft: 30
 --- !u!1 &2206180484985727873
 GameObject:
   m_ObjectHideFlags: 0
