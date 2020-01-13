@@ -36,7 +36,7 @@ public class GameManager : Manager<GameManager>
 
 
     #region Score
-	private float m_Score;
+    private float m_Score;
 	public float Score
 	{
 		get { return m_Score; }

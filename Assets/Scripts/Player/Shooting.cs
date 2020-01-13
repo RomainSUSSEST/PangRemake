@@ -1,5 +1,4 @@
-﻿using STUDENT_NAME;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

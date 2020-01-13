@@ -56,7 +56,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4533aa845f919740b7a93acf236a678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CountdownTimer: {fileID: 0}
   SpawnPlayer1: {fileID: 437990965193222499}
+  m_TimeLeft: 100
 --- !u!1 &6802580851164854867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,11 +1055,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 9021131215582366011, guid: fb617330b11099e4b98299ee0e4e7694,
-        type: 3}
-      propertyPath: m_Name
-      value: UnDestructibleWall
-      objectReference: {fileID: 0}
     - target: {fileID: 994593256115526428, guid: fb617330b11099e4b98299ee0e4e7694,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1112,6 +1109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021131215582366011, guid: fb617330b11099e4b98299ee0e4e7694,
+        type: 3}
+      propertyPath: m_Name
+      value: UnDestructibleWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb617330b11099e4b98299ee0e4e7694, type: 3}
