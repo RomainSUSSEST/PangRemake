@@ -18,7 +18,8 @@ namespace STUDENT_NAME
 		private GameObject CurrentLevel;
 
 		[SerializeField] private GameObject PlayerPrefab;
-		private GameObject currentPlayer1;
+		private GameObject currentPlayer1; // Joueur 1
+		private GameObject currentPlayer2; // Joueur 2
 		
 
 		#endregion
@@ -35,14 +36,12 @@ namespace STUDENT_NAME
 		{
 			base.SubscribeEvents();
 			EventManager.Instance.AddListener<GoToNextLevelEvent>(GoToNextLevel);
-			EventManager.Instance.AddListener<BallHasBeenDestroyedEvent>(BallHasBeenDestroyed);
 		}
 
 		public override void UnsubscribeEvents()
 		{
 			base.UnsubscribeEvents();
 			EventManager.Instance.RemoveListener<GoToNextLevelEvent>(GoToNextLevel);
-			EventManager.Instance.AddListener<BallHasBeenDestroyedEvent>(BallHasBeenDestroyed);
 		}
 
 		#region Callbacks to GameManager events
@@ -63,16 +62,8 @@ namespace STUDENT_NAME
 			++CurrentLevelIndex;
 			StartCoroutine(GoToNextLevelCoroutine());
 		}
-
-		protected void BallHasBeenDestroyed(BallHasBeenDestroyedEvent ball)
-		{
-			
-			if (Ball.GetAllBall().Count == 0)
-			{
-				EventManager.Instance.Raise(new GoToNextLevelEvent());
-			}
-		}
 		#endregion
+
 
 		// Outils
 
@@ -91,6 +82,9 @@ namespace STUDENT_NAME
 		{
 			levelIndex = Mathf.Max(levelIndex, 0) % m_LevelsPrefabs.Length;
 			CurrentLevel = Instantiate(m_LevelsPrefabs[levelIndex]);
+
+			// On demande au niveau d'initialiser la position du joueur 1.
+			CurrentLevel.GetComponent<Level>().SetPlayer1Position(currentPlayer1);
 		}
 	}
 }
