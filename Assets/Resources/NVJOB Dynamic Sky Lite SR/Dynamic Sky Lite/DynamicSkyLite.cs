@@ -58,7 +58,11 @@ public class DynamicSkyLite : MonoBehaviour
 
         //---------------------------------
 
-        tr.position = new Vector3(player.position.x, tr.position.y, player.position.z);
+        if (player != null)
+        {
+            tr.position = new Vector3(player.position.x, tr.position.y, player.position.z);
+        }
+        
 
         //---------------------------------
     }
