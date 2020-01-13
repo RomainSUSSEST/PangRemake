@@ -58,3 +58,16 @@ public class ScoreItemEvent : SDD.Events.Event
 	public float eScore;
 }
 #endregion
+
+#region Level Events
+	public class GoToNextLevelEvent : SDD.Events.Event
+{
+
+}
+
+	public class BallHasBeenDestroyedEvent : SDD.Events.Event
+{
+
+}
+
+#endregion

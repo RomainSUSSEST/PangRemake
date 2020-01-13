@@ -31,9 +31,8 @@ public class GrapnelScript : MonoBehaviour
     }
 
     // Permet de détruire proprement le Grapnel
-    public void Kill()
+    private void OnDestroy()
     {
         KillFunction();
-        Destroy(this.gameObject);
     }
 }

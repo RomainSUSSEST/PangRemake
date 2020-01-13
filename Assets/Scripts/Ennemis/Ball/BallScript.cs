@@ -78,14 +78,31 @@ public class BallScript : Ball
         {
             // On détruit les éléments this & le projectile
 
-            collision.gameObject.GetComponent<GrapnelScript>().Kill();
             this.Kill();
+            Destroy(collision.gameObject);
         }
+    }
+
+
+    // Outils
+
+    // Renvoie le ball step associé à la boule courante ou null.
+    private Transform GetBallStepAssociate()
+    {
+        int children = BallsStep.transform.childCount;
+        for (int i = 0; i < children; ++i)
+        {
+            if (BallsStep.transform.GetChild(i).GetComponent<BallsStep>().GetRemainingSplitStep() == GetRemainingSplit())
+            {
+                return BallsStep.transform.GetChild(i);
+            }
+        }
+        return null;
     }
 
     public override void Kill()
     {
-        if (RemainingSplit > 1)
+        if (GetRemainingSplit() > 1)
         {
             // CALCUL DES NOUVELLES POSITIONS DES BOULES
 
@@ -112,6 +129,7 @@ public class BallScript : Ball
 
             GameObject ballLeft = Instantiate(this.gameObject, positionLeft, Quaternion.identity);
             GameObject ballRight = Instantiate(this.gameObject, positionRight, Quaternion.identity);
+
 
             // On redimensionne les 2 boules
 
@@ -141,23 +159,6 @@ public class BallScript : Ball
             }
         }
 
-        base.Kill();
-    }
-
-
-    // Outils
-
-    // Renvoie le ball step associé à la boule courante ou null.
-    private Transform GetBallStepAssociate()
-    {
-        int children = BallsStep.transform.childCount;
-        for (int i = 0; i < children; ++i)
-        {
-            if (BallsStep.transform.GetChild(i).GetComponent<BallsStep>().GetRemainingSplitStep() == GetRemainingSplit())
-            {
-                return BallsStep.transform.GetChild(i);
-            }
-        }
-        return null;
+        Destroy(this.gameObject);
     }
 }

@@ -8,7 +8,7 @@ public class LimitHeightGrapnelScript : MonoBehaviour
     {
         if (GameManager.Instance.IsPlaying && collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES))
         {
-            collision.GetComponent<GrapnelScript>().Kill();
+            Destroy(collision.gameObject);
         }
     }
 }
