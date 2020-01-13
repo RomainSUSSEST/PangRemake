@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3079107060941670153}
   - component: {fileID: 6332106370642115903}
   - component: {fileID: 350331182570242502}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mod_Ground_Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

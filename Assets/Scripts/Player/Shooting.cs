@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using STUDENT_NAME;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -59,7 +60,7 @@ public class Shooting : MonoBehaviour
     // Appelé par evenement
     private void Shoot()
     {
-        GameObject Grapnel = Instantiate(ProjectilesPrefab, SpawnProjectiles.transform.position, Quaternion.identity, null);
+        GameObject Grapnel = Instantiate(ProjectilesPrefab, SpawnProjectiles.transform.position, Quaternion.identity, LevelManager.Instance.GetCurrentLevel());
         Grapnel.GetComponent<GrapnelScript>().Initiate(KillGrapnel);
 
         CurrentNbrGrapnel += 1;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7682268963039179613}
   - component: {fileID: 1713584836569614699}
   - component: {fileID: 4970682333992695186}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mod_Dirt_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

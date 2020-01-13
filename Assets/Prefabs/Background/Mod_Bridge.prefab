@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1060920866929370511}
   - component: {fileID: 8350275516855541689}
   - component: {fileID: 2368517628887769920}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mod_Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}

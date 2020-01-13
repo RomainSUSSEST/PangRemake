@@ -15,11 +15,11 @@ public class DestructibleWall : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Si l'on rentre en collision avec un player projectile, on le détruit this et le projectile
-        if (GameManager.Instance.IsPlaying && !IsDestroyed && collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES))
+        if (GameManager.Instance.IsPlaying && !IsDestroyed && collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES) && !collision.gameObject.GetComponent<PlayerProjectiles>().IsDestroyed())
         {
             IsDestroyed = true;
-            Destroy(this);
-            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<PlayerProjectiles>().Kill();
         }
     }
 }

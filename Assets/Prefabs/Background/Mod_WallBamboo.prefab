@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7924141051350013528}
   - component: {fileID: 1198857942737218670}
   - component: {fileID: 4872819588612100247}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mod_WallBamboo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

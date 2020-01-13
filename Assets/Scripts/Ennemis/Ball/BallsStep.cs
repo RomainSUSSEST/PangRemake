@@ -8,8 +8,6 @@ public class BallsStep : MonoBehaviour
 
     [SerializeField] private int RemainingSplitStep;
 
-    private bool m_Destroyed = false;
-
 
     // Requete
 

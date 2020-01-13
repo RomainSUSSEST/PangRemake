@@ -20,7 +20,7 @@ namespace STUDENT_NAME
 		[SerializeField] private GameObject PlayerPrefab;
 		private GameObject currentPlayer1; // Joueur 1
 		private GameObject currentPlayer2; // Joueur 2
-		
+
 
 		#endregion
 
@@ -31,6 +31,17 @@ namespace STUDENT_NAME
 			yield break;
 		}
 		#endregion
+
+		// Requete
+
+		// On Renvoie uniquement le transform, il serait dangereux de donner accès au niveau complet à l'ensemble des classes.
+		public Transform GetCurrentLevel()
+		{
+			return CurrentLevel.transform;
+		}
+
+
+		// Méthode
 
 		public override void SubscribeEvents()
 		{

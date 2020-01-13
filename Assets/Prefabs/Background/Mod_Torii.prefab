@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8341497934372736656}
   - component: {fileID: 1052138697085826214}
   - component: {fileID: 6747935927185033311}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mod_Torii
   m_TagString: Untagged
   m_Icon: {fileID: 0}

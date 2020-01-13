@@ -9,6 +9,7 @@ public class Level : MonoBehaviour, IEventHandler
 	// Attributs
 
 	[SerializeField] private GameObject SpawnPlayer1;
+	private bool LevelIsSkipped;
 
 
 	// Méthode
@@ -38,12 +39,21 @@ public class Level : MonoBehaviour, IEventHandler
 		Player1.transform.position = SpawnPlayer1.transform.position;
 	}
 
+	private void Update()
+	{
+		if (Input.GetButtonDown("Fire2") && !LevelIsSkipped)
+		{
+			LevelIsSkipped = true;
+			EventManager.Instance.Raise(new GoToNextLevelEvent());
+		}
+	}
+
 
 	// Outils
 
 	private void BallHasBeenDestroyed(BallHasBeenDestroyedEvent e)
 	{
-		if (Ball.GetAllBall().Count == 0)
+		if (Ball.GetAllBall().Count == 0 && !LevelIsSkipped)
 		{
 			EventManager.Instance.Raise(new GoToNextLevelEvent());
 		}

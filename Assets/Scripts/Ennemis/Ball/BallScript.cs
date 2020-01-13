@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using STUDENT_NAME;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +25,7 @@ public class BallScript : Ball
     [SerializeField] private List<GameObject> BonusObjectList;
 
     private Rigidbody2D rb;
+    private bool IsDestroyed;
 
 
     // "Constructeur"
@@ -74,12 +77,14 @@ public class BallScript : Ball
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES))
+        if (collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES) && !IsDestroyed && !collision.gameObject.GetComponent<PlayerProjectiles>().IsDestroyed())
         {
+            IsDestroyed = true; // On indique que la ball est détruite
+
             // On détruit les éléments this & le projectile
 
             this.Kill();
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<PlayerProjectiles>().Kill(); // On détruit le player projectile
         }
     }
 
@@ -127,8 +132,8 @@ public class BallScript : Ball
             Vector3 positionLeft = new Vector3(xLeft, y, this.transform.position.z);
             Vector3 positionRight = new Vector3(xRight, y, this.transform.position.z);
 
-            GameObject ballLeft = Instantiate(this.gameObject, positionLeft, Quaternion.identity);
-            GameObject ballRight = Instantiate(this.gameObject, positionRight, Quaternion.identity);
+            GameObject ballLeft = Instantiate(this.gameObject, positionLeft, Quaternion.identity, LevelManager.Instance.GetCurrentLevel());
+            GameObject ballRight = Instantiate(this.gameObject, positionRight, Quaternion.identity, LevelManager.Instance.GetCurrentLevel());
 
 
             // On redimensionne les 2 boules
@@ -155,7 +160,7 @@ public class BallScript : Ball
 
                 // Si la chance sourit, on spawn un objet bonus.
                 int indexObject = random.Next(BonusObjectList.Count);
-                Instantiate(BonusObjectList[indexObject], transform.position, BonusObjectList[indexObject].transform.rotation, null);
+                Instantiate(BonusObjectList[indexObject], transform.position, BonusObjectList[indexObject].transform.rotation, LevelManager.Instance.GetCurrentLevel());
             }
         }
 

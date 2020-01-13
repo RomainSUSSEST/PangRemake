@@ -48,6 +48,7 @@ public abstract class Ball : SimpleGameStateObserver
         base.OnDestroy();
         BALL.Remove(this);
 
+        // On envoie un event pour signifier qu'une ball a été détruite.
         EventManager.Instance.Raise(new BallHasBeenDestroyedEvent());
     }
 

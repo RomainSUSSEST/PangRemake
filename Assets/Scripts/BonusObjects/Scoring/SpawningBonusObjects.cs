@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using STUDENT_NAME;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class SpawningBonusObjects : MonoBehaviour
         int indexSpawn = random.Next(m_ListSpawners.Count);
         int delayBetweenSpawns = random.Next(10, 30);
 
-        GameObject bonusItem = Instantiate(m_ListObjects[indexObject], m_ListSpawners[indexSpawn].position, m_ListObjects[indexObject].transform.rotation, null);
+        GameObject bonusItem = Instantiate(m_ListObjects[indexObject], m_ListSpawners[indexSpawn].position, m_ListObjects[indexObject].transform.rotation, LevelManager.Instance.GetCurrentLevel());
 
         yield return new WaitForSeconds(delayBetweenSpawns);
 

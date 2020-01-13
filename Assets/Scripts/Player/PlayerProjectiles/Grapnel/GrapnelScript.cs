@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrapnelScript : MonoBehaviour
+public class GrapnelScript : PlayerProjectiles
 {
     // Attributs
 
@@ -35,4 +35,5 @@ public class GrapnelScript : MonoBehaviour
     {
         KillFunction();
     }
+
 }

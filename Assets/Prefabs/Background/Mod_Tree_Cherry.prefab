@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2269604148204715258}
   - component: {fileID: 7071854614570698444}
   - component: {fileID: 3537805273449790005}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mod_Tree_Cherry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
