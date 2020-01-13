@@ -35,7 +35,7 @@ public class MusicLoopsManager : Singleton<MusicLoopsManager> {
 		for (int i = 0; i < m_AudioSources.Length; i++) 
 		{
 			m_MaxVolumes[i] = m_AudioSources[i].volume;
-			//m_AudioSources[i].clip = m_Clips[i];
+			m_AudioSources[i].clip = m_Clips[i];
 		}
 
 	}
@@ -79,6 +79,7 @@ public class MusicLoopsManager : Singleton<MusicLoopsManager> {
 	public void PlayMusic(int index,bool fade = true)
 	{
 		m_CurrClipIndex = index % m_Clips.Count;
+		Debug.Log(m_CurrClipIndex);
 		if (fade)
 		{
 			m_AudioSources[1 - m_IndexFadeIn].clip = m_Clips[m_CurrClipIndex];

@@ -31,6 +31,10 @@ public abstract class Ball : SimpleGameStateObserver
         return new List<Ball>(BALL);
     }
 
+    // Attributs
+
+    [SerializeField] string SoundPlayOnDead; // Son joué à la mort de l'objet.
+
 
     // Méthodes
 
@@ -50,10 +54,16 @@ public abstract class Ball : SimpleGameStateObserver
 
         // On envoie un event pour signifier qu'une ball a été détruite.
         EventManager.Instance.Raise(new BallHasBeenDestroyedEvent());
+        PlaySound();
     }
 
     // Outils
 
      // Méthode a appelé pour détruire correctement une Ball. (Pour qu'elle puisse appliquer son avant mort).
     public abstract void Kill();
+
+    void PlaySound()
+    {
+        if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(SoundPlayOnDead);
+    }
 }

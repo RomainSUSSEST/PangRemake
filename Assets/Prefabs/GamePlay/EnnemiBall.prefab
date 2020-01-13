@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e4b6d88ac2a914986c93f75baf7ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundPlayOnDead: BalloonPop
   FORCE_X_AXIS: 180
   FORCE_Y_AXIS: 140
   direction: 0
@@ -169,4 +170,3 @@ MonoBehaviour:
   BonusObjectList:
   - {fileID: 978263654855953166, guid: 1c394c3547bce8f4998d964104c6d700, type: 3}
   - {fileID: 8946866974168898218, guid: 76c35a0b1464cea4dbf0629d4e7b70f9, type: 3}
-  BallPrefab: {fileID: 1268007115728101133}

@@ -194,16 +194,6 @@ PrefabInstance:
       propertyPath: HUDPanel
       value: 
       objectReference: {fileID: 1278737688}
-    - target: {fileID: 114746243097493696, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_Clips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 225237505bd2d08448e734986949ab5a, type: 3}
-    - target: {fileID: 114746243097493696, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_Clips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 18fc0e399ffc63641b8c4cb50030cd6c, type: 3}
     - target: {fileID: 114331011742233390, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
         type: 3}
       propertyPath: m_ResourcesFolderName
