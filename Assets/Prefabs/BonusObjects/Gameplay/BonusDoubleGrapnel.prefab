@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b17eb87d4ce38e4d8a578e4fa41d3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TextureWeaponIcon: {fileID: 2800000, guid: 50713e0111387437d8821cb34c17d912, type: 3}
 --- !u!1 &6816262610234805096
 GameObject:
   m_ObjectHideFlags: 0

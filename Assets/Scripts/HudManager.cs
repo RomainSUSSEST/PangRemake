@@ -11,6 +11,7 @@ public class HudManager : Manager<HudManager>
     #region Labels & Values
     [SerializeField] Text currentScore;
     [SerializeField] GameObject HUDPanel;
+    [SerializeField] public RawImage m_WeaponIcon;
     #endregion
 
     #region Manager implementation
