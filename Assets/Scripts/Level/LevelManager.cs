@@ -47,17 +47,29 @@ namespace STUDENT_NAME
 		{
 			base.SubscribeEvents();
 			EventManager.Instance.AddListener<GoToNextLevelEvent>(GoToNextLevel);
+			EventManager.Instance.AddListener<APlayerIsDeadEvent>(APlayerIsDead);
 		}
 
 		public override void UnsubscribeEvents()
 		{
 			base.UnsubscribeEvents();
 			EventManager.Instance.RemoveListener<GoToNextLevelEvent>(GoToNextLevel);
+			EventManager.Instance.RemoveListener<APlayerIsDeadEvent>(APlayerIsDead);
 		}
 
 		#region Callbacks to GameManager events
 		protected override void GamePlay(GamePlayEvent e)
 		{
+			// On détruit les éléments exitant si il y a, de la partie précédente.
+			if (currentPlayer1 != null)
+			{
+				Destroy(currentPlayer1);
+			}
+			if (CurrentLevel != null)
+			{
+				Destroy(CurrentLevel);
+			}
+
 			currentPlayer1 = Instantiate(PlayerPrefab);
 			InstantiateLevel(0);
 		}
@@ -72,6 +84,12 @@ namespace STUDENT_NAME
 		{
 			++CurrentLevelIndex;
 			StartCoroutine(GoToNextLevelCoroutine());
+		}
+
+		protected void APlayerIsDead(APlayerIsDeadEvent e)
+		{
+			// TO DO gérer le multi
+			EventManager.Instance.Raise(new GameOverEvent());
 		}
 		#endregion
 

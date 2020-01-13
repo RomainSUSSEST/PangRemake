@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SDD.Events;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,6 +32,8 @@ public class PlayerDefeat : MonoBehaviour
             Destroy(GetComponent<Rigidbody2D>());
             Destroy(GetComponent<CapsuleCollider2D>());
             Destroy(CapsuleCollider2DZAxis);
+
+            EventManager.Instance.Raise(new APlayerIsDeadEvent());
         }
     }
 }

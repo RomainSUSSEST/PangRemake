@@ -70,4 +70,7 @@ public class ScoreItemEvent : SDD.Events.Event
 
 }
 
+	public class APlayerIsDeadEvent : SDD.Events.Event
+{
+}
 #endregion

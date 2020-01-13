@@ -13,11 +13,6 @@ public class HudManager : Manager<HudManager>
     [SerializeField] GameObject HUDPanel;
     #endregion
 
-    private void Update()
-    {
-        ShowHideHUD();
-    }
-
     #region Manager implementation
     protected override IEnumerator InitCoroutine()
 	{
@@ -33,16 +28,33 @@ public class HudManager : Manager<HudManager>
     }
     #endregion
 
-    #region Show & Hide HUD
-    void ShowHideHUD()
+    #region Callbacks to GameManager events
+    protected override void GamePlay(GamePlayEvent e)
     {
-        if (GameManager.Instance.IsPlaying)
-        {
-            HUDPanel.SetActive(true);
-        } else
-        {
-            HUDPanel.SetActive(false);
-        }
+        ShowHUD();
+    }
+
+    protected override void GameMenu(GameMenuEvent e)
+    {
+        HideHUD();
+    }
+
+    protected override void GamePause(GamePauseEvent e)
+    {
+        HideHUD();
+    }
+
+    #endregion
+
+    #region Show & Hide HUD
+    void ShowHUD()
+    {
+        HUDPanel.SetActive(true);
+    }
+
+    void HideHUD()
+    {
+        HUDPanel.SetActive(false);
     }
     #endregion
 
