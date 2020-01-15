@@ -159,8 +159,7 @@ public class GameManager : Manager<GameManager>
 
     private void HighscoresButtonClicked(HighscoresButtonClickedEvent e)
     {
-        // TO DO
-        Debug.Log("Highscores button is not set yet !");
+        Highscores();
     }
 
     private void QuitButtonClicked(QuitButtonClickedEvent e)
@@ -213,6 +212,14 @@ public class GameManager : Manager<GameManager>
 		EventManager.Instance.Raise(new GameOverEvent());
 		if(SfxManager.Instance) SfxManager.Instance.PlaySfx2D(Constants.GAMEOVER_SFX);
 	}
+
+    private void Highscores()
+    {
+        SetTimeScale(0);
+        m_GameState = GameState.gameMenu;
+        if (MusicLoopsManager.Instance) MusicLoopsManager.Instance.PlayMusic(Constants.MENU_MUSIC);
+        EventManager.Instance.Raise(new GameHighscoresEvent());
+    }
 	#endregion
 }
 

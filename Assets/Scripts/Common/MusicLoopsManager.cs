@@ -79,7 +79,6 @@ public class MusicLoopsManager : Singleton<MusicLoopsManager> {
 	public void PlayMusic(int index,bool fade = true)
 	{
 		m_CurrClipIndex = index % m_Clips.Count;
-		Debug.Log(m_CurrClipIndex);
 		if (fade)
 		{
 			m_AudioSources[1 - m_IndexFadeIn].clip = m_Clips[m_CurrClipIndex];
