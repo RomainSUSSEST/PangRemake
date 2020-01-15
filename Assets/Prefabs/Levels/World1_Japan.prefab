@@ -624,6 +624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3553269179646084384}
+  - component: {fileID: 8498315944835271530}
   m_Layer: 0
   m_Name: World1_Japan
   m_TagString: Untagged
@@ -649,6 +650,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8498315944835271530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6268919843679825557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 33.771725, y: 0.10000001, z: 58.709126}
+  m_Center: {x: 12.692598, y: 0, z: 25.145437}
 --- !u!1 &7535436098611486918
 GameObject:
   m_ObjectHideFlags: 0
