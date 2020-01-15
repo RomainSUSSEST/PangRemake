@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
             // On récupére le mouvement souhaité
 
-            inputs = new Vector2(Input.GetAxis("Horizontal"), 0);
+            inputs = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
 
             // On oriente le personnage en fonction et on anime le player (isWalking = true)
 

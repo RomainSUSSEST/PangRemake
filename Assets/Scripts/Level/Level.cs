@@ -11,6 +11,7 @@ public class Level : MonoBehaviour, IEventHandler
 	private bool LevelIsSkipped;
 
     [SerializeField] int m_TimeLeft;
+    private bool IsGameOver;
 
     void Start()
     {
@@ -65,7 +66,7 @@ public class Level : MonoBehaviour, IEventHandler
 
 	private void Update()
 	{
-		if (Input.GetButtonDown("Fire2") && !LevelIsSkipped)
+		if (Input.GetButtonDown("Fire2") && !LevelIsSkipped && !IsGameOver && GameManager.Instance.IsPlaying)
 		{
 			LevelIsSkipped = true;
 			EventManager.Instance.Raise(new GoToNextLevelEvent());
@@ -93,5 +94,6 @@ public class Level : MonoBehaviour, IEventHandler
     private void GameOver(GameOverEvent e)
     {
         StopCoroutine("TimerCountdown");
+        IsGameOver = true;
     }
 }

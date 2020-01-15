@@ -35,6 +35,8 @@ public abstract class Ball : SimpleGameStateObserver
 
     [SerializeField] string SoundPlayOnDead; // Son joué à la mort de l'objet.
 
+    private bool IsGameOver;
+
 
     // Méthodes
 
@@ -42,6 +44,14 @@ public abstract class Ball : SimpleGameStateObserver
     {
         BALL.Add(this);
     }
+
+    protected override void GameOver(GameOverEvent e)
+    {
+        base.GameOver(e);
+
+        IsGameOver = true;
+    }
+
 
     // Méthode permettant d'initialiser la ball, doit appelé SetInitiateObject(true) dans le corps.
     public abstract void InitiateObject(Direction.DirectionValue direction, int nbrSplit);
@@ -64,6 +74,11 @@ public abstract class Ball : SimpleGameStateObserver
 
     void PlaySound()
     {
-        if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(SoundPlayOnDead);
+        // On ne joue le son que si il n'y a pas eu de gameOver.
+        if (!IsGameOver && GameManager.Instance.IsPlaying)
+        {
+             if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(SoundPlayOnDead);
+        }
+ 
     }
 }
