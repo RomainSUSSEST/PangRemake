@@ -7,6 +7,9 @@ using SDD.Events;
 public class GameMenuEvent : SDD.Events.Event
 {
 }
+public class GameHighscoresEvent : SDD.Events.Event
+{
+}
 public class GamePlayEvent : SDD.Events.Event
 {
 }

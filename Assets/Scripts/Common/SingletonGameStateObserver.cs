@@ -9,7 +9,8 @@ public abstract class SingletonGameStateObserver<T> :  Singleton<T>,IEventHandle
 	public virtual void SubscribeEvents()
 	{
 		EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
-		EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
+        EventManager.Instance.AddListener<GameHighscoresEvent>(GameHighscores);
+        EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
 		EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
 		EventManager.Instance.AddListener<GameResumeEvent>(GameResume);
 		EventManager.Instance.AddListener<GameOverEvent>(GameOver);
@@ -20,7 +21,8 @@ public abstract class SingletonGameStateObserver<T> :  Singleton<T>,IEventHandle
 	public virtual void UnsubscribeEvents()
 	{
 		EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
-		EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
+        EventManager.Instance.AddListener<GameHighscoresEvent>(GameHighscores);
+        EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
 		EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
 		EventManager.Instance.RemoveListener<GameResumeEvent>(GameResume);
 		EventManager.Instance.RemoveListener<GameOverEvent>(GameOver);
@@ -43,7 +45,11 @@ public abstract class SingletonGameStateObserver<T> :  Singleton<T>,IEventHandle
 	{
 	}
 
-	protected virtual void GamePlay(GamePlayEvent e)
+    protected virtual void GameHighscores(GameHighscoresEvent e)
+    {
+    }
+
+    protected virtual void GamePlay(GamePlayEvent e)
 	{
 	}
 
