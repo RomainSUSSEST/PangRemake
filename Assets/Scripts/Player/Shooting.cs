@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] private GameObject ProjectilesPrefab;
     [SerializeField] private Transform SpawnProjectiles;
+    [SerializeField] private string SoundOnFire;
 
     private int MaxNbrGrapnel;
     private int CurrentNbrGrapnel;
@@ -61,6 +62,8 @@ public class Shooting : MonoBehaviour
     {
         GameObject Grapnel = Instantiate(ProjectilesPrefab, SpawnProjectiles.transform.position, Quaternion.identity, LevelManager.Instance.GetCurrentLevel());
         Grapnel.GetComponent<GrapnelScript>().Initiate(KillGrapnel);
+
+        if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(SoundOnFire);
 
         CurrentNbrGrapnel += 1;
     }

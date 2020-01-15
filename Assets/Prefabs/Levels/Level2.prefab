@@ -53,7 +53,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4533aa845f919740b7a93acf236a678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CountdownTimer: {fileID: 0}
   SpawnPlayer1: {fileID: 437990965193222499}
   m_TimeLeft: 90
 --- !u!1 &8261512431576796566
@@ -154,11 +153,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 1268007115728101133, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
-        type: 3}
-      propertyPath: m_Name
-      value: EnnemiBall
-      objectReference: {fileID: 0}
     - target: {fileID: 1268007115728101139, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -214,6 +208,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1268007115728101133, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
+        type: 3}
+      propertyPath: m_Name
+      value: EnnemiBall
+      objectReference: {fileID: 0}
     - target: {fileID: 6329894935332942820, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
         type: 3}
       propertyPath: direction
@@ -239,11 +238,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 4941021921867369295, guid: e9948a47ac744c94bb3a4d32b7afe04c,
-        type: 3}
-      propertyPath: m_Name
-      value: Map
-      objectReference: {fileID: 0}
     - target: {fileID: 4941021921867369292, guid: e9948a47ac744c94bb3a4d32b7afe04c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -304,6 +298,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.125
       objectReference: {fileID: 0}
+    - target: {fileID: 4941021921867369295, guid: e9948a47ac744c94bb3a4d32b7afe04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Map
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9948a47ac744c94bb3a4d32b7afe04c, type: 3}
 --- !u!4 &5202637740892233570 stripped
@@ -319,11 +318,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 5603979247659807322, guid: 8a12c745772ba924e85f705bd8ba1b74,
-        type: 3}
-      propertyPath: m_Name
-      value: Dynamic Sky Type 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5603979247659807325, guid: 8a12c745772ba924e85f705bd8ba1b74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -394,6 +388,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 46.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5603979247659807322, guid: 8a12c745772ba924e85f705bd8ba1b74,
+        type: 3}
+      propertyPath: m_Name
+      value: Dynamic Sky Type 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a12c745772ba924e85f705bd8ba1b74, type: 3}
 --- !u!4 &6695925700196234799 stripped
@@ -409,11 +408,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 1306877468554181463, guid: 84e10de21ceb9d9459e6fc01e00a20be,
-        type: 3}
-      propertyPath: m_Name
-      value: LimitHeightGrapnel
-      objectReference: {fileID: 0}
     - target: {fileID: 5322502615511573012, guid: 84e10de21ceb9d9459e6fc01e00a20be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,6 +467,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306877468554181463, guid: 84e10de21ceb9d9459e6fc01e00a20be,
+        type: 3}
+      propertyPath: m_Name
+      value: LimitHeightGrapnel
       objectReference: {fileID: 0}
     - target: {fileID: -4203443124231943797, guid: 84e10de21ceb9d9459e6fc01e00a20be,
         type: 3}
@@ -585,11 +584,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 2706515500768644086, guid: 2a758b7cbb104c747aba22c846222ad3,
-        type: 3}
-      propertyPath: m_Name
-      value: ObjectsSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 2706515500768644084, guid: 2a758b7cbb104c747aba22c846222ad3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -689,6 +683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706515500768644086, guid: 2a758b7cbb104c747aba22c846222ad3,
+        type: 3}
+      propertyPath: m_Name
+      value: ObjectsSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2706515501481536999, guid: 2a758b7cbb104c747aba22c846222ad3,
         type: 3}
@@ -807,11 +806,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 6268919843679825557, guid: f0e456d70f5bd3344b15edbc74869490,
-        type: 3}
-      propertyPath: m_Name
-      value: World1_Japan
-      objectReference: {fileID: 0}
     - target: {fileID: 3553269179646084384, guid: f0e456d70f5bd3344b15edbc74869490,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -820,11 +814,6 @@ PrefabInstance:
     - target: {fileID: 3553269179646084384, guid: f0e456d70f5bd3344b15edbc74869490,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3553269179646084384, guid: f0e456d70f5bd3344b15edbc74869490,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3553269179646084384, guid: f0e456d70f5bd3344b15edbc74869490,
@@ -867,6 +856,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6268919843679825557, guid: f0e456d70f5bd3344b15edbc74869490,
+        type: 3}
+      propertyPath: m_Name
+      value: World1_Japan
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0e456d70f5bd3344b15edbc74869490, type: 3}
 --- !u!4 &4781333199840868111 stripped
@@ -882,11 +876,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
-    - target: {fileID: 1268007115728101133, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
-        type: 3}
-      propertyPath: m_Name
-      value: EnnemiBall (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1268007115728101139, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -941,6 +930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268007115728101133, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
+        type: 3}
+      propertyPath: m_Name
+      value: EnnemiBall (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6329894935332942820, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
         type: 3}

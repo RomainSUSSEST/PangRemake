@@ -672,6 +672,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812839434889765925}
     m_Modifications:
+    - target: {fileID: 2501129405643278940, guid: 207e1705fd7afaf48820422772c7490e,
+        type: 3}
+      propertyPath: m_Name
+      value: BallsStep
+      objectReference: {fileID: 0}
     - target: {fileID: 4499349382893298223, guid: 207e1705fd7afaf48820422772c7490e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -731,11 +736,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 2501129405643278940, guid: 207e1705fd7afaf48820422772c7490e,
-        type: 3}
-      propertyPath: m_Name
-      value: BallsStep
       objectReference: {fileID: 0}
     - target: {fileID: 3748332042957059991, guid: 207e1705fd7afaf48820422772c7490e,
         type: 3}
@@ -1248,11 +1248,6 @@ PrefabInstance:
     - target: {fileID: 3553269179646084384, guid: f0e456d70f5bd3344b15edbc74869490,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3553269179646084384, guid: f0e456d70f5bd3344b15edbc74869490,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3553269179646084384, guid: f0e456d70f5bd3344b15edbc74869490,
