@@ -6,6 +6,7 @@ using System;
 public class HighscoresScoring : MonoBehaviour
 {
     [SerializeField] List<Text> HighscoresGUI = new List<Text>();
+    int count;
 
     private class Highscores
     {
@@ -77,12 +78,10 @@ public class HighscoresScoring : MonoBehaviour
             }
         }
 
-        int count = 0;
         foreach (HighscoreEntry highscoreEntry in m_Highscores.highscoreEntries)
         {
-            if (count < 9)
+            if (count < HighscoresGUI.Count)
             {
-                Debug.Log(HighscoresGUI[count].text);
                 HighscoresGUI[count].text = "#" + (count + 1) + " " + highscoreEntry.m_PlayerName + " - " + highscoreEntry.m_PlayerScore;
             }
             count++;
