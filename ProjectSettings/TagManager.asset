@@ -15,12 +15,12 @@ TagManager:
   - UI
   - 
   - 
-  - Player
+  - PlayerWithCollision
   - Ennemi
   - Bonus
   - PlayerProjectiles
   - Background
-  - 
+  - PlayerWithoutCollision
   - 
   - 
   - 

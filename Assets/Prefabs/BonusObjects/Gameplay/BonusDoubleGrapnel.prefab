@@ -50,7 +50,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -265,4 +265,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6816262610234805096}
-  m_Mesh: {fileID: -1724975008842750468, guid: 0224eb93be1db1f42a4c88403f1c382d, type: 3}
+  m_Mesh: {fileID: -1724975008842750468, guid: cfe66339b14cc45e7ae76d0e362a9bd6, type: 3}

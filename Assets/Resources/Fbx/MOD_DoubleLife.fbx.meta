@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 0224eb93be1db1f42a4c88403f1c382d
+guid: 1756a53451aaf424b9ab06fa803d67fd
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MagicStone
+    second: {fileID: 2100000, guid: a593be1a2ae71aa4e8703f1bc182e75a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 2100000, guid: 6490c92c6890d2447a5aad181b8a239d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
