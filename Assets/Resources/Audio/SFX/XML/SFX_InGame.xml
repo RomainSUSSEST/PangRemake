@@ -7,4 +7,5 @@
 	<SFX name="GameOver" volume="1" />
   <SFX name="BalloonPop" volume="1"/>
   <SFX name="FireGrapnelWeapon" volume="1"/>
+  <SFX name="FireGunWeapon" volume="1"/>
 </SFX_SETUP>
