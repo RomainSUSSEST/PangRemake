@@ -21,8 +21,10 @@ public class GrapnelWeapon : Weapon
 
     // Méthodes
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         // On récupére le transform du player auquel on est attaché.
         SpawnProjectiles = transform.root;
     }

@@ -607,6 +607,11 @@ PrefabInstance:
       propertyPath: m_WeaponIcon
       value: 
       objectReference: {fileID: 413411870}
+    - target: {fileID: 1171858396684603040, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
+        type: 3}
+      propertyPath: WeaponIcon
+      value: 
+      objectReference: {fileID: 413411870}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68480a01e4a00ab45b3d746ae2fc86ee, type: 3}
 --- !u!1001 &1495724557368582680

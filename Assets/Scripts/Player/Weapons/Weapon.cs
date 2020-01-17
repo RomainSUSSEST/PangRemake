@@ -32,7 +32,7 @@ public abstract class Weapon : MonoBehaviour
 
     // Méthode
 
-    private void Start()
+    protected virtual void Start()
     {
         HudManager.Instance.SetWeaponIcon(Icone);
     }
