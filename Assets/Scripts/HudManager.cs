@@ -157,6 +157,7 @@ public class HudManager : Manager<HudManager>
         PlayerPrefs.SetString("HIGHSCORES", json);
         PlayerPrefs.Save();
     }
+    #endregion
 
     #region WeaponIcon
     public void SetWeaponIcon(Texture icon)

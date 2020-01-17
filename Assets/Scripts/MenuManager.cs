@@ -15,7 +15,6 @@ public class MenuManager : Manager<MenuManager>
 	[SerializeField] GameObject m_PanelInGameMenu;
 	[SerializeField] GameObject m_PanelGameOver;
     [SerializeField] GameObject m_PanelHighscores;
-	[SerializeField] GameObject m_PanelPlayerName;
 
 	List<GameObject> m_AllPanels;
 	#endregion
@@ -63,7 +62,6 @@ public class MenuManager : Manager<MenuManager>
 		m_AllPanels.Add(m_PanelInGameMenu);
 		m_AllPanels.Add(m_PanelGameOver);
         m_AllPanels.Add(m_PanelHighscores);
-		m_AllPanels.Add(m_PanelPlayerName);
 	}
 
 	void OpenPanel(GameObject panel)
