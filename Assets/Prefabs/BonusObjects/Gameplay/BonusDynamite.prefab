@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 2718009315282081571}
   - component: {fileID: -1562050685738139541}
   m_Layer: 10
-  m_Name: Dynamite
+  m_Name: BonusDynamite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,11 +273,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5364615933079070905}
     m_Modifications:
-    - target: {fileID: 5031319140499850099, guid: 2180dc86b899fd243ac599945e6acdc7,
-        type: 3}
-      propertyPath: m_Name
-      value: DynamiteParticule
-      objectReference: {fileID: 0}
     - target: {fileID: 3789307170259958485, guid: 2180dc86b899fd243ac599945e6acdc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -332,6 +327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 39.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031319140499850099, guid: 2180dc86b899fd243ac599945e6acdc7,
+        type: 3}
+      propertyPath: m_Name
+      value: DynamiteParticule
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2180dc86b899fd243ac599945e6acdc7, type: 3}

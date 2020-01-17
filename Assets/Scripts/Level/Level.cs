@@ -10,7 +10,7 @@ public class Level : MonoBehaviour, IEventHandler
     [SerializeField] GameObject SpawnPlayer1;
 	private bool LevelIsSkipped;
 
-    [SerializeField] int m_TimeLeft;
+    [SerializeField] private int m_TimeLeft;
     private bool IsGameOver;
 
     void Start()
@@ -22,16 +22,18 @@ public class Level : MonoBehaviour, IEventHandler
     #region
     IEnumerator TimerCountdown()
     {
-        yield return new WaitForSeconds(0.5f);
-
         while (m_TimeLeft > 0)
         {
             if (GameManager.Instance.IsPlaying)
             {
-                yield return new WaitForSeconds(1f);
-                m_TimeLeft--;
-            }
+				LevelManager.Instance.m_CountdownTimer.text = m_TimeLeft.ToString();
+				yield return new WaitForSeconds(1f);
+				--m_TimeLeft;
+			}
         }
+
+		LevelManager.Instance.m_CountdownTimer.text = m_TimeLeft.ToString();
+		EventManager.Instance.Raise(new GameOverEvent());
     }
     #endregion
 
@@ -71,14 +73,6 @@ public class Level : MonoBehaviour, IEventHandler
 			LevelIsSkipped = true;
 			EventManager.Instance.Raise(new GoToNextLevelEvent());
 		}
-
-        LevelManager.Instance.m_CountdownTimer.text = m_TimeLeft.ToString();
-
-        if (m_TimeLeft <= 0)
-        {
-            EventManager.Instance.Raise(new GameOverEvent());
-        }
-            
     }
 
 

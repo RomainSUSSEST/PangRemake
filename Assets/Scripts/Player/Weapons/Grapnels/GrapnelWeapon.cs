@@ -8,7 +8,7 @@ public class GrapnelWeapon : Weapon
 
     [SerializeField] private int MaxNbrGrapnel = 1;
     private int CurrentNbrGrapnel;
-    private Transform SpawnProjectiles;
+    private Transform Personnal_SpawnProjectiles;
 
 
     // Requête
@@ -26,14 +26,14 @@ public class GrapnelWeapon : Weapon
         base.Start();
 
         // On récupére le transform du player auquel on est attaché.
-        SpawnProjectiles = transform.root;
+        Personnal_SpawnProjectiles = transform.root;
     }
 
     // Implentation de Weapon
     public override void Shoot()
     {
-        GameObject Grapnel = Instantiate(GetProjectilesPrefab(), SpawnProjectiles.position, Quaternion.identity, LevelManager.Instance.GetCurrentLevel());
-        Grapnel.GetComponent<GrapnelProjectile>().Initiate(KillGrapnel);
+        GameObject Grapnel = Instantiate(GetProjectilesPrefab(), Personnal_SpawnProjectiles.position, Quaternion.identity, LevelManager.Instance.GetCurrentLevel());
+        Grapnel.GetComponent<GrapnelProjectiles>().SetKillFunction(KillGrapnel);
 
         if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(GetSoundOnFire());
 

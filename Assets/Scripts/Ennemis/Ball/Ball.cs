@@ -81,7 +81,7 @@ public abstract class Ball : SimpleGameStateObserver
 
         if (!IsGameOver && GameManager.Instance.IsPlaying)
         {
-            PlaySound();
+            PlayDeathSound();
             AddScore();
         }
 
@@ -152,7 +152,8 @@ public abstract class Ball : SimpleGameStateObserver
 
     protected abstract Transform GetBallStepAssociate();
 
-    private void PlaySound()
+    // Joue le son de mort de la balle.
+    private void PlayDeathSound()
     {
         if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(SoundPlayOnDead);
     }

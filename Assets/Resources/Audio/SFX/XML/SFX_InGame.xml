@@ -8,4 +8,5 @@
   <SFX name="BalloonPop" volume="1"/>
   <SFX name="FireGrapnelWeapon" volume="1"/>
   <SFX name="FireGunWeapon" volume="1"/>
+  <SFX name="WeaponChange" volume="1"/>
 </SFX_SETUP>

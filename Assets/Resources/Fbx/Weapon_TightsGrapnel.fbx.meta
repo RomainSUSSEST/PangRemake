@@ -3,7 +3,22 @@ guid: 0bd8df8e2707b6a4ab7a51f6bd02b355
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TightsGrapnel_Black
+    second: {fileID: 2100000, guid: 5cab1aaa30d489c4385e45b84ac6c108, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TightsGrapnel_White
+    second: {fileID: 2100000, guid: 64c26d41a26400f4aaa9a30f0b571441, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TightsGrapnel_Wood
+    second: {fileID: 2100000, guid: 7f4f018803b3cc748b6c8fa4dddbac95, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

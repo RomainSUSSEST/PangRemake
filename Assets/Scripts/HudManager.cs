@@ -143,7 +143,6 @@ public class HudManager : Manager<HudManager>
 
         foreach (HighscoreEntry highscoreEntry in m_Highscores.highscoreEntries)
         {
-            Debug.Log(count);
             if (count < HighscoresGUI.Count)
             {
                 HighscoresGUI[count].text = "#" + (count + 1) + " " + highscoreEntry.m_PlayerName + " - " + highscoreEntry.m_PlayerScore;

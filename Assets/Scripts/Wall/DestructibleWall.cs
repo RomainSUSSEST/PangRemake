@@ -20,6 +20,16 @@ public class DestructibleWall : MonoBehaviour
             IsDestroyed = true;
             Destroy(this.gameObject);
             collision.gameObject.GetComponent<PlayerProjectiles>().Kill();
+        } else if (IsDestroyed)
+        {
+            // Tous les objets entrant en collision alors que l'objet est déjà détruit, on leur redonne leur élan passé.
+
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                rb.velocity = collision.relativeVelocity;
+            }
         }
     }
 }

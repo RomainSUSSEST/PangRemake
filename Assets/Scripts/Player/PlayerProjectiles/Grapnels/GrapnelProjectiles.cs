@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using SDD.Events;
 using UnityEngine;
 
-public class GrapnelProjectile : PlayerProjectiles
+public abstract class GrapnelProjectiles : PlayerProjectiles
 {
     // Attributs
 
@@ -13,9 +13,9 @@ public class GrapnelProjectile : PlayerProjectiles
     private System.Action KillFunction;
 
 
-    // 'Constructeur'
+    // Méthode
 
-    public void Initiate(System.Action KillFunction)
+    public void SetKillFunction(System.Action KillFunction)
     {
         this.KillFunction = KillFunction;
     }
@@ -31,7 +31,22 @@ public class GrapnelProjectile : PlayerProjectiles
     // Permet de détruire proprement le Grapnel
     private void OnDestroy()
     {
+        if (KillFunction == null)
+        {
+            Debug.LogError("Erreur, le projectile ne possède pas de fonction kill");
+            return;
+        }
+
         KillFunction();
     }
 
+    protected void SetExpansionSpeed(float speed)
+    {
+        ExpansionSpeed = speed;
+    }
+
+    protected void SetRotationSpeed(float speed)
+    {
+        RotationSpeed = speed;
+    }
 }

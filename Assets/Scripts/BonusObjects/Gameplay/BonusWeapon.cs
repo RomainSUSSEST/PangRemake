@@ -8,10 +8,13 @@ public class BonusWeapon : GameplayBonusObjects
     // Attributs
 
     [SerializeField] private GameObject Weapon;
+    [SerializeField] private string SoundChangeWeapon;
 
 
     // Méthode
     protected override void ItemIsPickUp(GameObject Player) {
         Player.GetComponent<PlayerWeaponManager>().SetWeapon(Weapon);
+
+        if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(SoundChangeWeapon);
     }
 }

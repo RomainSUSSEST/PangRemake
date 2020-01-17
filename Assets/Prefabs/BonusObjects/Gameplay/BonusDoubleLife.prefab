@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: -1607114470642396563}
   - component: {fileID: 1490785470118206721}
   m_Layer: 10
-  m_Name: MOD_DoubleLife
+  m_Name: BonusDoubleLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

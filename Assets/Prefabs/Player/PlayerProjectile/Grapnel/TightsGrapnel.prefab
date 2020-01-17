@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8581777026030781208}
   - component: {fileID: 8440276216064765006}
   - component: {fileID: 3740876415033304687}
-  - component: {fileID: 8763080815605870241}
+  - component: {fileID: 1272929371803231743}
   m_Layer: 11
-  m_Name: Grapnel
+  m_Name: TightsGrapnel
   m_TagString: PlayerProjectiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8763080815605870241
+--- !u!114 &1272929371803231743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,11 +90,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4702815072315683083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7223734d618df640ab16c4aa2d02a95, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b4a9640808fcb42b4e8cf3ed45186c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ExpansionSpeed: 9
   RotationSpeed: 5
+  ImmobilityDelai: 1.5
 --- !u!1 &8105811220513679238
 GameObject:
   m_ObjectHideFlags: 0

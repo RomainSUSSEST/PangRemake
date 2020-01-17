@@ -268,3 +268,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapon: {fileID: 5561049097454547346, guid: e6654ebc99957d543a326cc82840bc63, type: 3}
+  SoundChangeWeapon: WeaponChange

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class LimitHeightProjectiles : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D collision)
+    // Méthode
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (GameManager.Instance.IsPlaying && collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES))
         {
-            Destroy(collision.gameObject);
+            collision.GetComponent<PlayerProjectiles>().LimitHeightEnter();
         }
     }
 }

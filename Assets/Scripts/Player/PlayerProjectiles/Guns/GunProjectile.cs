@@ -21,4 +21,12 @@ public class GunProjectile : PlayerProjectiles
     {
         this.direction = direction;
     }
+
+
+    // Implantation de PlayerProjectiles
+
+    public override void LimitHeightEnter()
+    {
+        Destroy(this.gameObject);
+    }
 }

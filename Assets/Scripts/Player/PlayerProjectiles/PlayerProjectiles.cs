@@ -28,4 +28,6 @@ public abstract class PlayerProjectiles : MonoBehaviour
         Destroy(this.gameObject);
         Destroyed = true;
     }
+
+    public abstract void LimitHeightEnter();
 }
