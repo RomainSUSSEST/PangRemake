@@ -31,7 +31,7 @@ public class GunWeapon : Weapon
         if (SfxManager.Instance) SfxManager.Instance.PlaySfx2D(GetSoundOnFire());
     }
 
-    private void Start()
+    protected override void Start()
     {
         CmptShootingRecast = SecondeShootingRecast;
     }
