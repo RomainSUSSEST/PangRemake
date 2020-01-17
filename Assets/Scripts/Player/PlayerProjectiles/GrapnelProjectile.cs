@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrapnelScript : PlayerProjectiles
+public class GrapnelProjectile : PlayerProjectiles
 {
     // Attributs
 
@@ -21,6 +21,14 @@ public class GrapnelScript : PlayerProjectiles
 
 
     // Méthode
+
+    private void Start()
+    {
+        if (KillFunction == null)
+        {
+            Debug.LogError("Grapnel non Initiate");
+        }
+    }
 
     // Update is called once per frame
     void Update()

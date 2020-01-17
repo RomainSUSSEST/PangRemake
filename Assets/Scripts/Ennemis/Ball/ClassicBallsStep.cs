@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallsStep : MonoBehaviour
+public class ClassicBallsStep : MonoBehaviour
 {
     // Attributs
 
@@ -21,7 +21,7 @@ public class BallsStep : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(Tags.BALL) && collision.GetComponent<BallScript>().GetRemainingSplit() == RemainingSplitStep
+        if (collision.gameObject.CompareTag(Tags.BALL) && collision.GetComponent<ClassicBall>().GetRemainingSplit() == RemainingSplitStep
             && collision.gameObject.transform.position.y < transform.position.y)
         {
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();

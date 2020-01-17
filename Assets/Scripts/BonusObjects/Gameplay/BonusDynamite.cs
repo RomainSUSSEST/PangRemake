@@ -9,7 +9,7 @@ public class BonusDynamite : GameplayBonusObjects
     {
         Ball.GetAllBall().ForEach(x =>
         {
-            x.GetComponent<BallScript>().Kill();
+            x.GetComponent<ClassicBall>().Kill();
         });
     }
 }

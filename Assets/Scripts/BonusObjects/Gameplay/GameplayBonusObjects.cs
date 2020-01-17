@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public abstract class GameplayBonusObjects : MonoBehaviour
 {
     // Attributs
+
     private bool m_Destroyed;
+
 
     // Méthodes
     private void OnCollisionEnter2D(Collision2D collision)

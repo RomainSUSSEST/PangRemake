@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallScript : Ball
+public class ClassicBall : Ball
 {
     // Constante
 
@@ -96,7 +96,7 @@ public class BallScript : Ball
         int children = BallsStep.transform.childCount;
         for (int i = 0; i < children; ++i)
         {
-            if (BallsStep.transform.GetChild(i).GetComponent<BallsStep>().GetRemainingSplitStep() == GetRemainingSplit())
+            if (BallsStep.transform.GetChild(i).GetComponent<ClassicBallsStep>().GetRemainingSplitStep() == GetRemainingSplit())
             {
                 return BallsStep.transform.GetChild(i);
             }
@@ -142,9 +142,9 @@ public class BallScript : Ball
 
             // On initialise les objets
 
-            ballLeft.GetComponent<BallScript>().InitiateObject(Direction.DirectionValue.LEFT,
+            ballLeft.GetComponent<ClassicBall>().InitiateObject(Direction.DirectionValue.LEFT,
                 this.RemainingSplit - 1);
-            ballRight.GetComponent<BallScript>().InitiateObject(Direction.DirectionValue.RIGHT,
+            ballRight.GetComponent<ClassicBall>().InitiateObject(Direction.DirectionValue.RIGHT,
                 this.RemainingSplit - 1);
 
             // On fait fait un random pour savoir si l'on fait pop ou non un objet bonus.

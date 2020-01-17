@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerProjectiles : MonoBehaviour
+public abstract class PlayerProjectiles : MonoBehaviour
 {
     // Attributs
 
