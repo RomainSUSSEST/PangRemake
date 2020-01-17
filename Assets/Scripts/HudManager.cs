@@ -113,16 +113,16 @@ public class HudManager : Manager<HudManager>
         if (m_Highscores == null)
         {
             // Default values of leaderboard
-            AddHighscoreEntry(10000, "AAAAA");
-            AddHighscoreEntry(9000, "BBBBB");
-            AddHighscoreEntry(8000, "CCCCC");
-            AddHighscoreEntry(7000, "DDDDD");
-            AddHighscoreEntry(6000, "EEEEE");
-            AddHighscoreEntry(5000, "FFFFF");
-            AddHighscoreEntry(4000, "GGGGG");
-            AddHighscoreEntry(3000, "HHHHH");
-            AddHighscoreEntry(2000, "IIIII");
-            AddHighscoreEntry(1000, "JJJJJ");
+            AddHighscoreEntry(1000, "AAAAA");
+            AddHighscoreEntry(900, "BBBBB");
+            AddHighscoreEntry(800, "CCCCC");
+            AddHighscoreEntry(700, "DDDDD");
+            AddHighscoreEntry(600, "EEEEE");
+            AddHighscoreEntry(500, "FFFFF");
+            AddHighscoreEntry(400, "GGGGG");
+            AddHighscoreEntry(300, "HHHHH");
+            AddHighscoreEntry(200, "IIIII");
+            AddHighscoreEntry(100, "JJJJJ");
             // Reload leaderboard
             jsonString = PlayerPrefs.GetString("HIGHSCORES");
             m_Highscores = JsonUtility.FromJson<Highscores>(jsonString);
@@ -143,15 +143,13 @@ public class HudManager : Manager<HudManager>
 
         foreach (HighscoreEntry highscoreEntry in m_Highscores.highscoreEntries)
         {
-
+            Debug.Log(count);
             if (count < HighscoresGUI.Count)
             {
                 HighscoresGUI[count].text = "#" + (count + 1) + " " + highscoreEntry.m_PlayerName + " - " + highscoreEntry.m_PlayerScore;
             }
             count++;
         }
-
-        m_Highscores.highscoreEntries.RemoveRange(9, m_Highscores.highscoreEntries.Count - 9);
 
         string json = JsonUtility.ToJson(m_Highscores);
         PlayerPrefs.SetString("HIGHSCORES", json);
