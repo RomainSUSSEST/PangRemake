@@ -48,7 +48,7 @@ MonoBehaviour:
     type: 3}
   SpawnProjectiles: {fileID: 0}
   SoundOnFire: FireGrapnelWeapon
-  Icone: {fileID: 2800000, guid: 3653e388e6b864a7cb27a0f1037f689e, type: 3}
+  Icone: {fileID: 2800000, guid: df8c51608257abd45b83825dc2af52ac, type: 3}
   MaxNbrGrapnel: 1
 --- !u!1 &4562967777626840543
 GameObject:
