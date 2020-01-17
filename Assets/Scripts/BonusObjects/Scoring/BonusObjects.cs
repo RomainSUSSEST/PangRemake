@@ -19,8 +19,10 @@ public class BonusObjects : MonoBehaviour
         if (GameManager.Instance.IsPlaying && !m_Destroyed && collison.gameObject.CompareTag(Tags.PLAYER))
         {
             m_Destroyed = true;
-            EventManager.Instance.Raise(new ScoreItemEvent() { eScore = m_ObjectValue });
             Destroy(this.gameObject);
+
+            // Ajout de points à la destruction d'un objet, ici une balle
+            EventManager.Instance.Raise(new ScoreItemEvent() { eScore = m_ObjectValue });
         }
     }
 }

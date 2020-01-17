@@ -30,7 +30,7 @@ public class GameManager : Manager<GameManager>
 	void SetNLives(int nLives)
 	{
 		m_NLives = nLives;
-		EventManager.Instance.Raise(new GameStatisticsChangedEvent() { eBestScore = BestScore, eScore = m_Score, eNLives = m_NLives});
+		EventManager.Instance.Raise(new GameStatisticsChangedEvent() { eBestScore = BestScore, eScore = Score, eNLives = m_NLives});
 	}
     #endregion
 
@@ -61,10 +61,10 @@ public class GameManager : Manager<GameManager>
 	void SetScore(float score, bool raiseEvent = true)
 	{
 		Score = score;
-
+		
 		if (raiseEvent)
 		{
-			EventManager.Instance.Raise(new GameStatisticsChangedEvent() { eBestScore = BestScore, eScore = m_Score, eNLives = m_NLives });
+			EventManager.Instance.Raise(new GameStatisticsChangedEvent() { eBestScore = BestScore, eScore = Score, eNLives = m_NLives });
 		}	
 	}
 	#endregion
@@ -90,8 +90,8 @@ public class GameManager : Manager<GameManager>
 		EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitButtonClicked);
         EventManager.Instance.AddListener<HighscoresButtonClickedEvent>(HighscoresButtonClicked);
 
-        //Score Item
-        EventManager.Instance.AddListener<ScoreItemEvent>(ScoreHasBeenGained);
+		//Score Item
+		EventManager.Instance.AddListener<ScoreItemEvent>(ScoreHasBeenGained);
 	}
 
 	public override void UnsubscribeEvents()
@@ -106,8 +106,8 @@ public class GameManager : Manager<GameManager>
 		EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitButtonClicked);
         EventManager.Instance.RemoveListener<HighscoresButtonClickedEvent>(HighscoresButtonClicked);
 
-        //Score Item
-        EventManager.Instance.RemoveListener<ScoreItemEvent>(ScoreHasBeenGained);
+		//Score Item
+		EventManager.Instance.RemoveListener<ScoreItemEvent>(ScoreHasBeenGained);
 	}
 	#endregion
 
@@ -162,7 +162,7 @@ public class GameManager : Manager<GameManager>
         Highscores();
     }
 
-    private void QuitButtonClicked(QuitButtonClickedEvent e)
+	private void QuitButtonClicked(QuitButtonClickedEvent e)
 	{
 		Application.Quit();
 	}
@@ -218,7 +218,8 @@ public class GameManager : Manager<GameManager>
         SetTimeScale(0);
         m_GameState = GameState.gameMenu;
         if (MusicLoopsManager.Instance) MusicLoopsManager.Instance.PlayMusic(Constants.MENU_MUSIC);
-        EventManager.Instance.Raise(new GameHighscoresEvent());
+		HudManager.Instance.UpdateLeaderboard();
+		EventManager.Instance.Raise(new GameHighscoresEvent());
     }
 	#endregion
 }

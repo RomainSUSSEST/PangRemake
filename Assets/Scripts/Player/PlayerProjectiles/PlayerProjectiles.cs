@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SDD.Events;
 using UnityEngine;
 
 public abstract class PlayerProjectiles : MonoBehaviour
@@ -15,9 +16,6 @@ public abstract class PlayerProjectiles : MonoBehaviour
     {
         return Destroyed;
     }
-
-
-    // Méthode
 
     // Permet de tuer proprement le projectile
     public void Kill()

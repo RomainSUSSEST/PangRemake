@@ -63,17 +63,13 @@ public class ScoreItemEvent : SDD.Events.Event
 #endregion
 
 #region Level Events
-	public class GoToNextLevelEvent : SDD.Events.Event
+public class GoToNextLevelEvent : SDD.Events.Event
 {
-
 }
-
-	public class BallHasBeenDestroyedEvent : SDD.Events.Event
+public class BallHasBeenDestroyedEvent : SDD.Events.Event
 {
-
 }
-
-	public class APlayerIsDeadEvent : SDD.Events.Event
+public class APlayerIsDeadEvent : SDD.Events.Event
 {
 }
 #endregion

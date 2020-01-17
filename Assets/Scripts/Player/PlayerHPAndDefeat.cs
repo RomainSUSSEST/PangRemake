@@ -14,19 +14,18 @@ public class PlayerHPAndDefeat : MonoBehaviour
     [SerializeField] private int DefaultHP = 1;
     [SerializeField] private GameObject EffectBonusHP; // Effet qui s'active ou se désactive selon les HP du joueurs.
     [SerializeField] private float InvincibilityTime;
-
     private Animator AnimPlayer;
     private int NbrHP;
     private int NewHP; // variable tampon permettant de stocker les nouveaux hp pour la coroutine.
     private bool IsInvincible; // Indique si le joueur est invincible.
-
+    int count;
 
     // Requete
 
-        public int GetNbrHP()
-        {
-            return NbrHP;
-        }
+    public int GetNbrHP()
+    {
+        return NbrHP;
+    }
 
 
     // Méthode
@@ -36,6 +35,7 @@ public class PlayerHPAndDefeat : MonoBehaviour
         NbrHP = DefaultHP;
         AnimPlayer = GetComponent<Animator>();
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (GameManager.Instance.IsPlaying && collision.gameObject.CompareTag(Tags.BALL) && !IsInvincible) // Si le joueur est invincible, on ne descend pas les hp.
@@ -54,6 +54,18 @@ public class PlayerHPAndDefeat : MonoBehaviour
             Destroy(GetComponent<Rigidbody2D>());
             Destroy(GetComponent<CapsuleCollider2D>());
             Destroy(CapsuleCollider2DZAxis);
+
+            
+            float currentPlayerScore = GameManager.Instance.Score;
+            float currentPlayerHighscore = HudManager.Instance.m_CurrentHighscore;
+            string currentPlayerName = HudManager.Instance.currentPlayerName.text;
+
+            if (currentPlayerScore >= currentPlayerHighscore)
+            {
+                HudManager.Instance.currentHighscoreGUI.text = currentPlayerScore.ToString();
+            }
+
+            HudManager.Instance.AddHighscoreEntry(currentPlayerScore, currentPlayerName);
 
             EventManager.Instance.Raise(new APlayerIsDeadEvent());
         }
