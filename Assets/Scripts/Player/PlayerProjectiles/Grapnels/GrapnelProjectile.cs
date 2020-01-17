@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SDD.Events;
 using UnityEngine;
 
 public class GrapnelProjectile : PlayerProjectiles
@@ -17,17 +18,6 @@ public class GrapnelProjectile : PlayerProjectiles
     public void Initiate(System.Action KillFunction)
     {
         this.KillFunction = KillFunction;
-    }
-
-
-    // Méthode
-
-    private void Start()
-    {
-        if (KillFunction == null)
-        {
-            Debug.LogError("Grapnel non Initiate");
-        }
     }
 
     // Update is called once per frame

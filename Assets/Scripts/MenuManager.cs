@@ -15,8 +15,9 @@ public class MenuManager : Manager<MenuManager>
 	[SerializeField] GameObject m_PanelInGameMenu;
 	[SerializeField] GameObject m_PanelGameOver;
     [SerializeField] GameObject m_PanelHighscores;
+	[SerializeField] GameObject m_PanelPlayerName;
 
-    List<GameObject> m_AllPanels;
+	List<GameObject> m_AllPanels;
 	#endregion
 
 	#region Events' subscription
@@ -62,7 +63,8 @@ public class MenuManager : Manager<MenuManager>
 		m_AllPanels.Add(m_PanelInGameMenu);
 		m_AllPanels.Add(m_PanelGameOver);
         m_AllPanels.Add(m_PanelHighscores);
-    }
+		m_AllPanels.Add(m_PanelPlayerName);
+	}
 
 	void OpenPanel(GameObject panel)
 	{
@@ -101,11 +103,10 @@ public class MenuManager : Manager<MenuManager>
     {
         EventManager.Instance.Raise(new HighscoresButtonClickedEvent());
     }
+	#endregion
 
-    #endregion
-
-    #region Callbacks to GameManager events
-    protected override void GameMenu(GameMenuEvent e)
+	#region Callbacks to GameManager events
+	protected override void GameMenu(GameMenuEvent e)
 	{
 		OpenPanel(m_PanelMainMenu);
 	}
@@ -134,5 +135,5 @@ public class MenuManager : Manager<MenuManager>
     {
         OpenPanel(m_PanelHighscores);
     }
-    #endregion
+	#endregion
 }
