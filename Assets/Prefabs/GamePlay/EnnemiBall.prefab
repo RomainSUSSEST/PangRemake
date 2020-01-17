@@ -162,7 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoundPlayOnDead: BalloonPop
-  FORCE_X_AXIS: 180
   FORCE_Y_AXIS: 140
   direction: 0
   RemainingSplit: 4
@@ -171,3 +170,5 @@ MonoBehaviour:
   - {fileID: 978263654855953166, guid: 1c394c3547bce8f4998d964104c6d700, type: 3}
   - {fileID: 8946866974168898218, guid: 76c35a0b1464cea4dbf0629d4e7b70f9, type: 3}
   - {fileID: 4411217850113439057, guid: 3481ffedda6f3ca4b85fcd35ea736d80, type: 3}
+  - {fileID: 5561049097454547346, guid: ce9544952164a324685ff736442cfdce, type: 3}
+  XVelocity: 5

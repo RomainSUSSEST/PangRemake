@@ -15,17 +15,29 @@ public class ClassicBallsStep : MonoBehaviour
     {
         return RemainingSplitStep;
     }
-        
+
 
     // Méthode
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(Tags.BALL) && collision.GetComponent<ClassicBall>().GetRemainingSplit() == RemainingSplitStep
-            && collision.gameObject.transform.position.y < transform.position.y)
+        if (collision.gameObject.CompareTag(Tags.BALL) && collision.GetComponent<ClassicBall>().GetRemainingSplit() == GetRemainingSplitStep())
         {
-            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            if (collision.GetComponent<Rigidbody2D>().velocity.y >= 0) // Si la boule monte
+            {
+                // On reset la velocité en Y pour ne pas que la boule aille plus haut.
+                Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+
+                // On désactive le boost de la ball pour son atterrissage futur.
+                collision.GetComponent<Ball>().DisableNextBoost();
+
+            } else // Si la boule descend
+            {
+                // On désactive le boost de la ball pour son atterrissage futur.
+                collision.GetComponent<Ball>().DisableNextBoost();
+            }
+
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LimitHeightGrapnelScript : MonoBehaviour
+public class LimitHeightProjectiles : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D collision)
     {

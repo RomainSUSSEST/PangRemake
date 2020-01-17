@@ -9,6 +9,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private GameObject ProjectilesPrefab;
     [SerializeField] private Transform SpawnProjectiles;
     [SerializeField] private string SoundOnFire;
+    [SerializeField] private Texture Icone;
 
 
     // Requete
@@ -30,6 +31,11 @@ public abstract class Weapon : MonoBehaviour
 
 
     // Méthode
+
+    private void Start()
+    {
+        HudManager.Instance.SetWeaponIcon(Icone);
+    }
 
     // Envoie un projectile
     public abstract void Shoot();

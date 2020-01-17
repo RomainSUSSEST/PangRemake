@@ -15,6 +15,7 @@ public class HudManager : Manager<HudManager>
     [SerializeField] public RawImage m_WeaponIcon;
     [SerializeField] public Text currentPlayerName;
     public float m_CurrentHighscore;
+    [SerializeField] private RawImage WeaponIcon;
     #endregion
 
     #region Manager implementation
@@ -142,7 +143,7 @@ public class HudManager : Manager<HudManager>
 
         foreach (HighscoreEntry highscoreEntry in m_Highscores.highscoreEntries)
         {
-            
+
             if (count < HighscoresGUI.Count)
             {
                 HighscoresGUI[count].text = "#" + (count + 1) + " " + highscoreEntry.m_PlayerName + " - " + highscoreEntry.m_PlayerScore;
@@ -155,6 +156,12 @@ public class HudManager : Manager<HudManager>
         string json = JsonUtility.ToJson(m_Highscores);
         PlayerPrefs.SetString("HIGHSCORES", json);
         PlayerPrefs.Save();
+    }
+
+    #region WeaponIcon
+    public void SetWeaponIcon(Texture icon)
+    {
+        WeaponIcon.texture = icon;
     }
     #endregion
 }

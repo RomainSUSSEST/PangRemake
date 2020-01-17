@@ -18,6 +18,11 @@ public abstract class PlayerProjectiles : MonoBehaviour
     }
 
     // Permet de tuer proprement le projectile
+
+    // Méthode
+
+    // Permet de tuer proprement le projectile et qu'il ne tue pas 2 ennemi en meme temps si sur
+    // 2 frame les objets sont proches.
     public void Kill()
     {
         Destroy(this.gameObject);
