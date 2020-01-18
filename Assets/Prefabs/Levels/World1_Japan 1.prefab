@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6268919843679825557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1052510608067269805}
@@ -181,8 +181,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 33.771725, y: 0.10000001, z: 58.709126}
-  m_Center: {x: 12.692598, y: 0, z: 25.145437}
+  m_Size: {x: 34.027966, y: 0, z: 31.861237}
+  m_Center: {x: 1.1146259, y: -0.050000004, z: 0.6235275}
 --- !u!1001 &962523043819779233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,16 +520,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3553269179646084384}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
-        type: 3}
-      propertyPath: m_Name
-      value: MOD_SakuraTree (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 12b395efd0c3d4cf985657b5f3af0629,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -584,6 +574,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
+        type: 3}
+      propertyPath: m_Name
+      value: MOD_SakuraTree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b395efd0c3d4cf985657b5f3af0629, type: 3}
@@ -760,11 +760,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1052510608067269805}
     m_Modifications:
-    - target: {fileID: 5413793204491714732, guid: 07603c480332d7d4f9890acf3521a2aa,
-        type: 3}
-      propertyPath: m_Name
-      value: Mod_FloorLamp (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 9041805165714338495, guid: 07603c480332d7d4f9890acf3521a2aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -819,6 +814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413793204491714732, guid: 07603c480332d7d4f9890acf3521a2aa,
+        type: 3}
+      propertyPath: m_Name
+      value: Mod_FloorLamp (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1084998880395542822, guid: 07603c480332d7d4f9890acf3521a2aa,
         type: 3}
@@ -950,16 +950,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3553269179646084384}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
-        type: 3}
-      propertyPath: m_Name
-      value: MOD_SakuraTree
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 12b395efd0c3d4cf985657b5f3af0629,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1015,6 +1005,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
+        type: 3}
+      propertyPath: m_Name
+      value: MOD_SakuraTree
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b395efd0c3d4cf985657b5f3af0629, type: 3}
 --- !u!4 &1292025986668897287 stripped
@@ -1030,16 +1030,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1052510608067269805}
     m_Modifications:
-    - target: {fileID: 8758374462280865967, guid: 4ca9790eff8ef254ba89fea063de95a3,
-        type: 3}
-      propertyPath: m_Name
-      value: Mod_Building 1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758374462280865967, guid: 4ca9790eff8ef254ba89fea063de95a3,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 5751280288999959228, guid: 4ca9790eff8ef254ba89fea063de95a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1095,6 +1085,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8758374462280865967, guid: 4ca9790eff8ef254ba89fea063de95a3,
+        type: 3}
+      propertyPath: m_Name
+      value: Mod_Building 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758374462280865967, guid: 4ca9790eff8ef254ba89fea063de95a3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7041141793647799411, guid: 4ca9790eff8ef254ba89fea063de95a3,
         type: 3}
       propertyPath: m_ReceiveShadows
@@ -1115,16 +1115,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3553269179646084384}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
-        type: 3}
-      propertyPath: m_Name
-      value: MOD_SakuraTree (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 12b395efd0c3d4cf985657b5f3af0629,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1180,6 +1170,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.000015258789
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
+        type: 3}
+      propertyPath: m_Name
+      value: MOD_SakuraTree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 12b395efd0c3d4cf985657b5f3af0629,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b395efd0c3d4cf985657b5f3af0629, type: 3}
 --- !u!4 &2019911161670805857 stripped
@@ -1195,11 +1195,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1052510608067269805}
     m_Modifications:
-    - target: {fileID: 5413793204491714732, guid: 07603c480332d7d4f9890acf3521a2aa,
-        type: 3}
-      propertyPath: m_Name
-      value: Mod_FloorLamp (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 9041805165714338495, guid: 07603c480332d7d4f9890acf3521a2aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1255,6 +1250,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5413793204491714732, guid: 07603c480332d7d4f9890acf3521a2aa,
+        type: 3}
+      propertyPath: m_Name
+      value: Mod_FloorLamp (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1084998880395542822, guid: 07603c480332d7d4f9890acf3521a2aa,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
@@ -1305,11 +1305,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1052510608067269805}
     m_Modifications:
-    - target: {fileID: 5413793204491714732, guid: 07603c480332d7d4f9890acf3521a2aa,
-        type: 3}
-      propertyPath: m_Name
-      value: Mod_FloorLamp
-      objectReference: {fileID: 0}
     - target: {fileID: 9041805165714338495, guid: 07603c480332d7d4f9890acf3521a2aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1364,6 +1359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413793204491714732, guid: 07603c480332d7d4f9890acf3521a2aa,
+        type: 3}
+      propertyPath: m_Name
+      value: Mod_FloorLamp
       objectReference: {fileID: 0}
     - target: {fileID: 1084998880395542822, guid: 07603c480332d7d4f9890acf3521a2aa,
         type: 3}
@@ -1490,11 +1490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1052510608067269805}
     m_Modifications:
-    - target: {fileID: 5413793204491714732, guid: 07603c480332d7d4f9890acf3521a2aa,
-        type: 3}
-      propertyPath: m_Name
-      value: Mod_FloorLamp (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 9041805165714338495, guid: 07603c480332d7d4f9890acf3521a2aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1549,6 +1544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413793204491714732, guid: 07603c480332d7d4f9890acf3521a2aa,
+        type: 3}
+      propertyPath: m_Name
+      value: Mod_FloorLamp (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1084998880395542822, guid: 07603c480332d7d4f9890acf3521a2aa,
         type: 3}
