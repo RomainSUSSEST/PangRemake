@@ -33,6 +33,7 @@ public class GunWeapon : Weapon
 
     protected override void Start()
     {
+        base.Start();
         CmptShootingRecast = SecondeShootingRecast;
     }
 
