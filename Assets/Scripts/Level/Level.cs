@@ -6,8 +6,18 @@ using UnityEngine.UI;
 
 public class Level : MonoBehaviour, IEventHandler
 {
+	// Constante
+
+	private readonly int BONUS_MULTIPLICATEUR_SCORE = 3;
+	private readonly int WARNING_TIME = 10; // Temps avant de lancer l'alerte, peu de temps.
+	private readonly float DELAI_CHANGE_COLOR_WARNING_TIME = 0.5f; // Délai entre 2 changement de couleur lors d'un warning time activé.
+
+
     // Attributs
+
     [SerializeField] GameObject SpawnPlayer1;
+	private GameObject currentPlayer1; // Joueur 1
+
 	private bool LevelIsSkipped;
 
     [SerializeField] private int m_TimeLeft;
@@ -16,16 +26,25 @@ public class Level : MonoBehaviour, IEventHandler
     void Start()
     {
         StartCoroutine("TimerCountdown");
+		EventManager.Instance.Raise(new NewLevelIsGeneratedEvent());
     }
 
     // Coroutine for timer
     #region
     IEnumerator TimerCountdown()
     {
+		bool CoroutineIsStart = false;
+
         while (m_TimeLeft > 0)
         {
             if (GameManager.Instance.IsPlaying)
             {
+				if (!CoroutineIsStart  && m_TimeLeft <= WARNING_TIME)
+				{
+					CoroutineIsStart = true;
+					StartCoroutine("NotALotTime");
+				}
+
 				LevelManager.Instance.m_CountdownTimer.text = m_TimeLeft.ToString();
 				yield return new WaitForSeconds(1f);
 				--m_TimeLeft;
@@ -35,12 +54,31 @@ public class Level : MonoBehaviour, IEventHandler
 		LevelManager.Instance.m_CountdownTimer.text = m_TimeLeft.ToString();
 		EventManager.Instance.Raise(new GameOverEvent());
     }
+
+	IEnumerator NotALotTime()
+	{
+		while (m_TimeLeft <= WARNING_TIME && m_TimeLeft > 0)
+		{
+			if (LevelManager.Instance.m_CountdownTimer.color == Color.white)
+			{
+				LevelManager.Instance.m_CountdownTimer.color = Color.red;
+			} else
+			{
+				LevelManager.Instance.m_CountdownTimer.color = Color.white;
+			}
+
+			yield return new WaitForSeconds(DELAI_CHANGE_COLOR_WARNING_TIME);
+		}
+
+		LevelManager.Instance.m_CountdownTimer.color = Color.white;
+	}
     #endregion
 
     // Méthode
 
     private void OnDestroy()
 	{
+
 		UnsubscribeEvents();
 	}
 
@@ -61,9 +99,9 @@ public class Level : MonoBehaviour, IEventHandler
         EventManager.Instance.RemoveListener<GameOverEvent>(GameOver);
 	}
 
-	public void SetPlayer1Position(GameObject Player1)
+	public void CreatePlayer1AtSpawnPosition(GameObject PlayerPrefab)
 	{
-		Player1.transform.position = SpawnPlayer1.transform.position;
+		currentPlayer1 = Instantiate(PlayerPrefab, SpawnPlayer1.transform.position, Quaternion.identity, this.gameObject.transform);
 	}
 
 	private void Update()
@@ -71,7 +109,7 @@ public class Level : MonoBehaviour, IEventHandler
 		if (Input.GetButtonDown("Fire2") && !LevelIsSkipped && !IsGameOver && GameManager.Instance.IsPlaying)
 		{
 			LevelIsSkipped = true;
-			EventManager.Instance.Raise(new GoToNextLevelEvent());
+			EventManager.Instance.Raise(new LevelIsSkippedEvent());
 		}
     }
 
@@ -79,8 +117,9 @@ public class Level : MonoBehaviour, IEventHandler
 	// Outils
 	private void BallHasBeenDestroyed(BallHasBeenDestroyedEvent e)
 	{
-		if (Ball.GetAllBall().Count == 0 && !LevelIsSkipped)
+		if (Ball.GetAllBall().Count == 0)
 		{
+			EventManager.Instance.Raise(new ScoreItemEvent { eScore = m_TimeLeft * BONUS_MULTIPLICATEUR_SCORE });
 			EventManager.Instance.Raise(new GoToNextLevelEvent());
 		}
 	}

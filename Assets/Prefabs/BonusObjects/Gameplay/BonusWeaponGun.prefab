@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529106686942800585}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8896730669466387329}
-  m_RootOrder: 1
+  m_Father: {fileID: 5694089520588664279}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &5871574208496073062
 Light:
@@ -119,7 +119,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7234860501913522442}
   m_Father: {fileID: 8896730669466387329}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -204,7 +205,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5694089520588664279}
-  - {fileID: 7234860501913522442}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -267,5 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b17eb87d4ce38e4d8a578e4fa41d3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_LifeTime: 12
+  gfx: {fileID: 993547004971486783}
   Weapon: {fileID: 5561049097454547346, guid: e6654ebc99957d543a326cc82840bc63, type: 3}
   SoundChangeWeapon: WeaponChange

@@ -44,6 +44,21 @@ public abstract class Ball : SimpleGameStateObserver
 
     // Méthodes
 
+    // Hérité de simpleGameStateObserver
+    public override void SubscribeEvents()
+    {
+        base.SubscribeEvents();
+
+        EventManager.Instance.AddListener<LevelIsSkippedEvent>(LevelIsSkipped);
+    }
+
+    public override void UnsubscribeEvents()
+    {
+        base.UnsubscribeEvents();
+
+        EventManager.Instance.RemoveListener<LevelIsSkippedEvent>(LevelIsSkipped);
+    }
+
     public void SetDirection(Direction.DirectionValue direction)
     {
         this.direction = direction;
@@ -160,7 +175,14 @@ public abstract class Ball : SimpleGameStateObserver
 
     private void AddScore()
     {
-        // Ajout de point à la destruction du projectile
-        EventManager.Instance.Raise(new ScoreItemEvent() { eScore = 20 });
+        int score = GetBonusPoints();
+        EventManager.Instance.Raise(new ScoreItemEvent { eScore = score });
+    }
+
+    protected abstract int GetBonusPoints();
+
+    private void LevelIsSkipped(LevelIsSkippedEvent e)
+    {
+        Destroy(this.gameObject);
     }
 }

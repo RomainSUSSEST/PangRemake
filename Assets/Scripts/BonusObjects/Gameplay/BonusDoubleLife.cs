@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BonusDoubleLife : GameplayBonusObjects
+public class BonusDoubleLife : BonusObject
 {
     // Constante
 
@@ -12,7 +12,6 @@ public class BonusDoubleLife : GameplayBonusObjects
     // Attributs
 
     [SerializeField] private int RotationSpeed;
-    [SerializeField] private GameObject Gfx;
 
 
     // Méthode
@@ -24,6 +23,6 @@ public class BonusDoubleLife : GameplayBonusObjects
     // On fait tourner l'objet.
     private void Update()
     {
-        Gfx.transform.Rotate(transform.rotation.x, transform.rotation.y + RotationSpeed * Time.deltaTime, transform.rotation.z);
+        GetGfx().transform.Rotate(transform.rotation.x, transform.rotation.y + RotationSpeed * Time.deltaTime, transform.rotation.z);
     }
 }

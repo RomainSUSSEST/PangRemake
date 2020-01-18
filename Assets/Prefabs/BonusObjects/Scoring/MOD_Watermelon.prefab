@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919548055587410659}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.004078865, z: -0.000000059604645}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.004078865, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4688491055246710606}
-  m_RootOrder: 1
+  m_Father: {fileID: 4343956021764942878}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &5792784841678997690
 Light:
@@ -119,7 +119,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 5683744160865564374}
   m_Father: {fileID: 4688491055246710606}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -178,9 +179,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4688491055246710606}
-  - component: {fileID: 7826788148405185819}
   - component: {fileID: 1356907906071095422}
   - component: {fileID: 4070064851136164106}
+  - component: {fileID: 8174773576835086367}
   m_Layer: 10
   m_Name: MOD_Watermelon
   m_TagString: Untagged
@@ -200,24 +201,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4343956021764942878}
-  - {fileID: 5683744160865564374}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7826788148405185819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5647888917042420990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5d2cc47b47ba1745b6d5f95efcba71f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ObjectValue: 50
-  m_LifeTime: 5
 --- !u!50 &1356907906071095422
 Rigidbody2D:
   serializedVersion: 4
@@ -265,3 +251,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.80000025, y: 0.8533579}
   m_EdgeRadius: 0
+--- !u!114 &8174773576835086367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5647888917042420990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb6da3f8fc42e044b7acc3c07ea1188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LifeTime: 8
+  gfx: {fileID: 3999650856695105877}
+  ScoringValue: 50

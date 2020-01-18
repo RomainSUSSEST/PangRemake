@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BonusDynamite : GameplayBonusObjects
+public class BonusDynamite : BonusObject
 {
     // Méthode
     protected override void ItemIsPickUp(GameObject Player)

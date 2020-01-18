@@ -72,4 +72,12 @@ public class BallHasBeenDestroyedEvent : SDD.Events.Event
 public class APlayerIsDeadEvent : SDD.Events.Event
 {
 }
+
+public class LevelIsSkippedEvent : SDD.Events.Event
+{
+}
+
+public class NewLevelIsGeneratedEvent : SDD.Events.Event
+{
+}
 #endregion

@@ -15,7 +15,6 @@ public class LevelManager : Manager<LevelManager>
 	private GameObject CurrentLevel;
 
 	[SerializeField] private GameObject PlayerPrefab;
-	private GameObject currentPlayer1; // Joueur 1
 
     [SerializeField] public Text m_CountdownTimer;
     #endregion
@@ -57,10 +56,6 @@ public class LevelManager : Manager<LevelManager>
 	protected override void GamePlay(GamePlayEvent e)
 	{
 		// On détruit les éléments exitant si il y a, de la partie précédente.
-		if (currentPlayer1 != null)
-		{
-			Destroy(currentPlayer1);
-		}
 		if (CurrentLevel != null)
 		{
 			Destroy(CurrentLevel);
@@ -68,14 +63,12 @@ public class LevelManager : Manager<LevelManager>
 
 		CurrentLevelIndex = 0;
 
-		currentPlayer1 = Instantiate(PlayerPrefab);
 		InstantiateLevel(CurrentLevelIndex);
 	}
 
 	protected override void GameMenu(GameMenuEvent e)
 	{
 		Destroy(CurrentLevel);
-		Destroy(currentPlayer1);
 	}
 
 	protected void GoToNextLevel(GoToNextLevelEvent e)
@@ -111,6 +104,6 @@ public class LevelManager : Manager<LevelManager>
 		CurrentLevel = Instantiate(m_LevelsPrefabs[levelIndex]);
 
 		// On demande au niveau d'initialiser la position du joueur 1.
-		CurrentLevel.GetComponent<Level>().SetPlayer1Position(currentPlayer1);
+		CurrentLevel.GetComponent<Level>().CreatePlayer1AtSpawnPosition(PlayerPrefab);
 	}
 }

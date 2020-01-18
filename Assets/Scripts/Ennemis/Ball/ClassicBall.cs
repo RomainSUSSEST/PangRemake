@@ -11,6 +11,7 @@ public class ClassicBall : Ball
     private static readonly float DISTANCE_REPOP_X = 1 / 2f; // En nombre de fois la corpulance de la boule
     private static readonly float DISTANCE_REPOP_Y = 1 / 2f; // En nombre de fois la corpulance de la boule
     private static readonly System.Random random = new System.Random();
+    private static readonly int MAX_BONUS_POINT = 80;
 
 
     // Attributs
@@ -45,6 +46,20 @@ public class ClassicBall : Ball
     protected void SetRemainingSplit(int remainingSplit)
     {
         this.RemainingSplit = remainingSplit;
+    }
+
+    protected override int GetBonusPoints()
+    {
+        switch (GetRemainingSplit()) {
+            case 4:
+                return 20;
+            case 3:
+                return 40;
+            case 2:
+                return 60;
+            default:
+                return 80;
+        }
     }
 
 
@@ -100,7 +115,7 @@ public class ClassicBall : Ball
 
             // On fait fait un random pour savoir si l'on fait pop ou non un objet bonus.
 
-            int maxValue = GetRemainingSplit() * GetRemainingSplit() - 9 * GetRemainingSplit() + 22; // Par interpolation de Lagrange sur f(2)=8, f(3)=4, f(4)=2
+            int maxValue = (GetRemainingSplit() * GetRemainingSplit() - 9 * GetRemainingSplit() + 24) / 2; // Par interpolation de Lagrange sur f(2)=5, f(3)=3, f(4)=2
             int randomValue = random.Next(1, maxValue + 1);
 
             if (randomValue == 1 && GetBonusObjectList().Count != 0) // Représente pour GetRemainingSplit() = 4, 1/2 chance.

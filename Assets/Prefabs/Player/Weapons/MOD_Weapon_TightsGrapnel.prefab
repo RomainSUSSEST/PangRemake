@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectilesPrefab: {fileID: 4702815072315683083, guid: 101212d9086a0c74791c143889b12b7e,
     type: 3}
-  SpawnProjectiles: {fileID: 0}
+  SpawnProjectiles: {fileID: 3855935604606168853}
   SoundOnFire: FireGrapnelWeapon
   Icone: {fileID: 2800000, guid: 80d47bb991c7f7346a6eb54490e1a9f1, type: 3}
   MaxNbrGrapnel: 1

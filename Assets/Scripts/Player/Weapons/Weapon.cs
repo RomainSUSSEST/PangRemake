@@ -11,6 +11,8 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private string SoundOnFire;
     [SerializeField] private Texture Icone;
 
+    private GameObject WeaponBearer;
+
 
     // Requete
 
@@ -29,6 +31,11 @@ public abstract class Weapon : MonoBehaviour
         return SoundOnFire;
     }
 
+    protected GameObject GetWeaponBearer()
+    {
+        return WeaponBearer;
+    }
+
 
     // Méthode
 
@@ -37,9 +44,19 @@ public abstract class Weapon : MonoBehaviour
         HudManager.Instance.SetWeaponIcon(Icone);
     }
 
+    protected virtual void SetSpawnProjectile(Transform SpawnProjectiles)
+    {
+        this.SpawnProjectiles = SpawnProjectiles;
+    }
+
     // Envoie un projectile
     public abstract void Shoot();
 
     // Indique si l'on peut tirer.
     public abstract bool CanShoot();
+
+    public void SetWeaponBearer(GameObject WeaponBearer)
+    {
+        this.WeaponBearer = WeaponBearer;
+    }
 }

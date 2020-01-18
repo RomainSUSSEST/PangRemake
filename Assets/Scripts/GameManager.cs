@@ -11,6 +11,7 @@ public class GameManager : Manager<GameManager>
 {
 	#region Game State
 	private GameState m_GameState;
+	private bool LevelIsSkiped;
 	public bool IsPlaying { get { return m_GameState == GameState.gamePlay; } }
 	#endregion
 
@@ -92,6 +93,10 @@ public class GameManager : Manager<GameManager>
 
 		//Score Item
 		EventManager.Instance.AddListener<ScoreItemEvent>(ScoreHasBeenGained);
+
+		// Level
+		EventManager.Instance.AddListener<LevelIsSkippedEvent>(LevelSkipped);
+		EventManager.Instance.AddListener<NewLevelIsGeneratedEvent>(LevelUnSkipped);
 	}
 
 	public override void UnsubscribeEvents()
@@ -108,6 +113,10 @@ public class GameManager : Manager<GameManager>
 
 		//Score Item
 		EventManager.Instance.RemoveListener<ScoreItemEvent>(ScoreHasBeenGained);
+
+		// Level
+		EventManager.Instance.RemoveListener<LevelIsSkippedEvent>(LevelSkipped);
+		EventManager.Instance.RemoveListener<NewLevelIsGeneratedEvent>(LevelUnSkipped);
 	}
 	#endregion
 
@@ -131,7 +140,7 @@ public class GameManager : Manager<GameManager>
 	#region Callbacks to events issued by Score items
 	private void ScoreHasBeenGained(ScoreItemEvent e)
 	{
-		if (IsPlaying)
+		if (IsPlaying && !LevelIsSkiped)
 			IncrementScore(e.eScore);
 	}
 	#endregion
@@ -166,10 +175,22 @@ public class GameManager : Manager<GameManager>
 	{
 		Application.Quit();
 	}
-	#endregion
+    #endregion
 
-	#region GameState methods
-	private void Menu()
+    #region Callbacks to Events issued by Level
+	private void LevelSkipped(LevelIsSkippedEvent e)
+	{
+		LevelIsSkiped = true;
+	}
+
+	private void LevelUnSkipped(NewLevelIsGeneratedEvent e)
+	{
+		LevelIsSkiped = false;
+	}
+    #endregion
+
+    #region GameState methods
+    private void Menu()
 	{
 		SetTimeScale(0);
 		m_GameState = GameState.gameMenu;

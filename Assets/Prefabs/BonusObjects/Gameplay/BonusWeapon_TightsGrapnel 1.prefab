@@ -31,7 +31,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1803152639044202203}
-  - {fileID: 8980704970450392920}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b17eb87d4ce38e4d8a578e4fa41d3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_LifeTime: 12
+  gfx: {fileID: 2261749709886425707}
   Weapon: {fileID: 277060267249114374, guid: 5c4ecbe936d356249b39193c09ba58fc, type: 3}
   SoundChangeWeapon: WeaponChange
 --- !u!50 &-3364089939574715066
@@ -124,7 +125,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8980704970450392920}
   m_Father: {fileID: 3855935604606168853}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,12 +202,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6592637233945403654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3855935604606168853}
-  m_RootOrder: 1
+  m_Father: {fileID: 1803152639044202203}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &687476938741867716
 Light:

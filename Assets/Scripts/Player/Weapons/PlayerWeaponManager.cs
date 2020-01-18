@@ -43,6 +43,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
         CurrentWeaponGameObject = Instantiate(weapon, PlayerHandForWeapon.transform);
         CurrentWeaponScript = CurrentWeaponGameObject.GetComponent<Weapon>();
+        CurrentWeaponScript.SetWeaponBearer(this.gameObject);
     }
 
     
