@@ -13,7 +13,7 @@ public class Level : MonoBehaviour, IEventHandler
 	private readonly float DELAI_CHANGE_COLOR_WARNING_TIME = 0.5f; // Délai entre 2 changement de couleur lors d'un warning time activé.
 
 
-    // Attributs
+	// Attributs
 
     [SerializeField] GameObject SpawnPlayer1;
 	private GameObject currentPlayer1; // Joueur 1

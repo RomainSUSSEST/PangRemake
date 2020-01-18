@@ -12,6 +12,7 @@ public class MenuManager : Manager<MenuManager>
 	#region Panels
 	[Header("Panels")]
 	[SerializeField] GameObject m_PanelMainMenu;
+	[SerializeField] UnityEngine.UI.RawImage BlackScreen;
 	[SerializeField] GameObject m_PanelInGameMenu;
 	[SerializeField] GameObject m_PanelGameOver;
     [SerializeField] GameObject m_PanelHighscores;
@@ -106,7 +107,24 @@ public class MenuManager : Manager<MenuManager>
 	#region Callbacks to GameManager events
 	protected override void GameMenu(GameMenuEvent e)
 	{
+		StartCoroutine("LaunchGameMenu");
+	}
+
+	private IEnumerator LaunchGameMenu()
+	{
+		BlackScreen.gameObject.SetActive(true);
+		yield return new WaitForSeconds(1);
 		OpenPanel(m_PanelMainMenu);
+		float decreaseValueAlpha = 0.05f;
+
+		while (BlackScreen.color.a > 0)
+		{
+			Debug.Log(BlackScreen.color.a);
+			BlackScreen.color = new Color(BlackScreen.color.r, BlackScreen.color.g, BlackScreen.color.b, BlackScreen.color.a - decreaseValueAlpha);
+			yield return new WaitForSeconds(0.05f);
+		}
+
+		BlackScreen.gameObject.SetActive(false);
 	}
 
 	protected override void GamePlay(GamePlayEvent e)

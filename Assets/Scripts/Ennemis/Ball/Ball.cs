@@ -112,34 +112,39 @@ public abstract class Ball : SimpleGameStateObserver
 
             this.Kill();
             collision.gameObject.GetComponent<PlayerProjectiles>().Kill(); // On détruit le player projectile
-        } else
+        }
+        else if (collision.gameObject.CompareTag(Tags.GROUND)) // Si la collision vient du sol.
         {
             // GESTION DU BOOST EN Y
-            if (collision.gameObject.CompareTag(Tags.GROUND)) // Si la collision vient du sol.
-            { // Si oui, le boost compte.
-                if (BoostIsActivate) // Si la boule a besoin d'un coups de boost
-                {
-                    rb.velocity = new Vector2(rb.velocity.x, BOOST);
-                }
-                else // Sinon, on se contente de réactiver le boost.
-                {
-                    BoostIsActivate = true; // On active toujours le boost.
-                }
-            }
 
-            // GESTION DE LA VITESSE CONSTANTE EN X
-
-            if (rb.velocity.x > 0)
+            if (BoostIsActivate) // Si la boule a besoin d'un coups de boost
             {
-                direction = Direction.DirectionValue.RIGHT;
+                rb.velocity = new Vector2(rb.velocity.x, BOOST);
             }
-            else if (rb.velocity.x < 0)
+            else // Sinon, on se contente de réactiver le boost.
             {
-                direction = Direction.DirectionValue.LEFT;
+                BoostIsActivate = true; // On active toujours le boost.
             }
+        } else if (collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES) && !collision.gameObject.GetComponent<PlayerProjectiles>().IsDestroyed() && IsDestroyed)
+        {
+            // Cas très rare ou 2 projectile rentre en collision en meme temps sur la même ball, cela peut détraquer le mouvement du 2ème projectile.
+            // On préfére donc le supprimer.
 
-            rb.velocity = new Vector2(XVelocity * Direction.GetValue(direction), rb.velocity.y);
+            collision.gameObject.GetComponent<PlayerProjectiles>().Kill(); // On détruit le player projectile
         }
+
+        // GESTION DE LA VITESSE CONSTANTE EN X
+
+        if (rb.velocity.x > 0)
+        {
+            direction = Direction.DirectionValue.RIGHT;
+        }
+        else if (rb.velocity.x < 0)
+        {
+            direction = Direction.DirectionValue.LEFT;
+        }
+
+        rb.velocity = new Vector2(XVelocity * Direction.GetValue(direction), rb.velocity.y);
     }
 
     protected List<GameObject> GetBonusObjectList()

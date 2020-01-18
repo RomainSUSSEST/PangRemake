@@ -12,7 +12,7 @@ public class HudManager : Manager<HudManager>
     [SerializeField] Text currentScoreGUI;
     [SerializeField] public Text currentHighscoreGUI;
     [SerializeField] GameObject HUDPanel;
-    [SerializeField] public RawImage m_WeaponIcon;
+    [SerializeField] private RawImage TransitionLevelImage;
     [SerializeField] public Text currentPlayerName;
     public float m_CurrentHighscore;
     [SerializeField] private RawImage WeaponIcon;
@@ -160,6 +160,26 @@ public class HudManager : Manager<HudManager>
     public void SetWeaponIcon(Texture icon)
     {
         WeaponIcon.texture = icon;
+    }
+    #endregion
+
+    #region TransitionLevelImage
+    public void SetTransitionLevelImage(Texture image)
+    {
+        if (image == null)
+        {
+            Debug.LogError("Image null en argument");
+            return;
+        }
+
+        TransitionLevelImage.gameObject.SetActive(true);
+        TransitionLevelImage.texture = image;
+    }
+
+    public void ErasedTransitionLevelImage()
+    {
+        TransitionLevelImage.texture = null;
+        TransitionLevelImage.gameObject.SetActive(false);
     }
     #endregion
 }

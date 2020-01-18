@@ -138,6 +138,10 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 5557257332506137516, guid: f4efd681f50fe194eb8be2fbf0179c45,
     type: 3}
   m_CountdownTimer: {fileID: 0}
+  TransitionLevelImageList:
+  - {fileID: 2800000, guid: ec71a5ad99ec8a342b1331797b0bd8b4, type: 3}
+  - {fileID: 2800000, guid: 8d05cdd3a5b3ab947a1253dbfad458ca, type: 3}
+  DelayBetweenTwoTransition: 2
 --- !u!1 &1171858396081064152
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,9 +402,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
-  currentScore: {fileID: 0}
+  currentScoreGUI: {fileID: 0}
+  currentHighscoreGUI: {fileID: 0}
   HUDPanel: {fileID: 0}
-  m_WeaponIcon: {fileID: 0}
+  TransitionLevelImage: {fileID: 0}
+  currentPlayerName: {fileID: 0}
+  m_CurrentHighscore: 0
+  WeaponIcon: {fileID: 0}
+  HighscoresGUI: []
 --- !u!1 &1171858397310708296
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
   m_Clips:
-  - {fileID: 8300000, guid: 225237505bd2d08448e734986949ab5a, type: 3}
+  - {fileID: 8300000, guid: 5e6b3f77fc09fef4db9a88d561cc8189, type: 3}
   - {fileID: 8300000, guid: e1e1f0e6565b86a49adb64d0fd435684, type: 3}
   - {fileID: 8300000, guid: 18fc0e399ffc63641b8c4cb50030cd6c, type: 3}
   m_FadeDuration: 1
