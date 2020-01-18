@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
   m_PanelMainMenu: {fileID: 0}
+  BlackScreen: {fileID: 0}
   m_PanelInGameMenu: {fileID: 0}
   m_PanelGameOver: {fileID: 0}
   m_PanelHighscores: {fileID: 0}
@@ -409,7 +410,16 @@ MonoBehaviour:
   currentPlayerName: {fileID: 0}
   m_CurrentHighscore: 0
   WeaponIcon: {fileID: 0}
-  HighscoresGUI: []
+  HighscoresGUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1171858397310708296
 GameObject:
   m_ObjectHideFlags: 0

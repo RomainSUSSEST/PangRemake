@@ -119,7 +119,6 @@ public class MenuManager : Manager<MenuManager>
 
 		while (BlackScreen.color.a > 0)
 		{
-			Debug.Log(BlackScreen.color.a);
 			BlackScreen.color = new Color(BlackScreen.color.r, BlackScreen.color.g, BlackScreen.color.b, BlackScreen.color.a - decreaseValueAlpha);
 			yield return new WaitForSeconds(0.05f);
 		}
