@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class LevelManager : Manager<LevelManager>
 {
+	// Attributs
+
 	[Header("LevelsManager")]
 	#region levels & current level management
 
@@ -17,6 +19,9 @@ public class LevelManager : Manager<LevelManager>
 	[SerializeField] private GameObject PlayerPrefab;
 
     [SerializeField] public Text m_CountdownTimer;
+
+	[SerializeField] private List<Texture> TransitionLevelImageList;
+	[SerializeField] private float DelayBetweenTwoTransition; // En seconde
     #endregion
 
 
@@ -95,6 +100,15 @@ public class LevelManager : Manager<LevelManager>
 			yield return null;
 		}
 
+		if (TransitionLevelImageList.Count > 0)
+		{
+			int randomIndex = Random.Range(0, TransitionLevelImageList.Count);
+			HudManager.Instance.SetTransitionLevelImage(TransitionLevelImageList[randomIndex]);
+			
+			yield return new WaitForSeconds(DelayBetweenTwoTransition);
+			HudManager.Instance.ErasedTransitionLevelImage();
+		}
+		
 		InstantiateLevel(CurrentLevelIndex);
 	}
 
