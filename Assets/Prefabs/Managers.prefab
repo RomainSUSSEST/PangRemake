@@ -131,11 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
   m_LevelsPrefabs:
-  - {fileID: 1812839432901584980, guid: e28ca142be4a1324ea8a329037cf5f9a, type: 3}
-  - {fileID: 1812839432901584980, guid: e0ccc64ede8ed1c47888385c9f7f5333, type: 3}
-  - {fileID: 1812839432901584980, guid: 8a82ff9ae0ded764a9595efe56237a38, type: 3}
-  - {fileID: 1812839432901584980, guid: 6d5d65d1f4132524f824551ac39a1a70, type: 3}
-  - {fileID: 1812839432901584980, guid: 5064436b27951ee448386bf432ffe50b, type: 3}
+  - {fileID: 1812839432901584980, guid: a0db09191c22c7b4ca2fa78570a9e37d, type: 3}
   PlayerPrefab: {fileID: 5557257332506137516, guid: f4efd681f50fe194eb8be2fbf0179c45,
     type: 3}
   m_CountdownTimer: {fileID: 0}

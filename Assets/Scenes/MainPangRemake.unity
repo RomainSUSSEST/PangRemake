@@ -298,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921129355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.14, y: -12, z: -27.99}
+  m_LocalPosition: {x: 0, y: -12, z: -27.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -486,6 +486,16 @@ PrefabInstance:
       propertyPath: TransitionLevelImage
       value: 
       objectReference: {fileID: 2801619112370722849}
+    - target: {fileID: 1171858396684603040, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
+        type: 3}
+      propertyPath: BlackScreenTransitionLevelImage
+      value: 
+      objectReference: {fileID: 2801619112370722863}
+    - target: {fileID: 1171858397625354216, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
+        type: 3}
+      propertyPath: MenuMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e6b3f77fc09fef4db9a88d561cc8189, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68480a01e4a00ab45b3d746ae2fc86ee, type: 3}
 --- !u!1001 &2801619112370722841
@@ -650,45 +660,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 955461319}
-    - target: {fileID: 7811608776104535471, guid: b057880a1ca8a9741b015577aabb9318,
+    - target: {fileID: 5179454399439143703, guid: b057880a1ca8a9741b015577aabb9318,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1665453928161335685, guid: b057880a1ca8a9741b015577aabb9318,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496363212275308928, guid: b057880a1ca8a9741b015577aabb9318,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496363212275308928, guid: b057880a1ca8a9741b015577aabb9318,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496363212275308928, guid: b057880a1ca8a9741b015577aabb9318,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496363212275308928, guid: b057880a1ca8a9741b015577aabb9318,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496363212275308928, guid: b057880a1ca8a9741b015577aabb9318,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -929
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496363212275308928, guid: b057880a1ca8a9741b015577aabb9318,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -509
+      propertyPath: m_Name
+      value: BlackScreenTransitionLevelImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b057880a1ca8a9741b015577aabb9318, type: 3}
@@ -912,5 +887,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2801619112370722863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4264917791051590641, guid: b057880a1ca8a9741b015577aabb9318,
+    type: 3}
+  m_PrefabInstance: {fileID: 2801619112370722841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

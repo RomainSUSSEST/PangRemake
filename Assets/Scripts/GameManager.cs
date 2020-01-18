@@ -194,7 +194,7 @@ public class GameManager : Manager<GameManager>
 	{
 		SetTimeScale(1);
 		m_GameState = GameState.gameMenu;
-		if(MusicLoopsManager.Instance)MusicLoopsManager.Instance.PlayMusic(Constants.MENU_MUSIC);
+		if(MusicLoopsManager.Instance)MusicLoopsManager.Instance.PlayMenuMusic();
 		EventManager.Instance.Raise(new GameMenuEvent());
 	}
 
@@ -204,7 +204,6 @@ public class GameManager : Manager<GameManager>
 		SetTimeScale(1);
 		m_GameState = GameState.gamePlay;
 
-		if (MusicLoopsManager.Instance) MusicLoopsManager.Instance.PlayMusic(Constants.GAMEPLAY_MUSIC);
 		EventManager.Instance.Raise(new GamePlayEvent());
 	}
 
@@ -238,7 +237,6 @@ public class GameManager : Manager<GameManager>
     {
         SetTimeScale(0);
         m_GameState = GameState.gameMenu;
-        if (MusicLoopsManager.Instance) MusicLoopsManager.Instance.PlayMusic(Constants.MENU_MUSIC);
 		HudManager.Instance.UpdateLeaderboard();
 		EventManager.Instance.Raise(new GameHighscoresEvent());
     }

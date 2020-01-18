@@ -15,6 +15,7 @@ public class Level : MonoBehaviour, IEventHandler
 
 	// Attributs
 
+	[SerializeField] AudioClip SongOfThisLevel;
     [SerializeField] GameObject SpawnPlayer1;
 	private GameObject currentPlayer1; // Joueur 1
 
@@ -23,10 +24,12 @@ public class Level : MonoBehaviour, IEventHandler
     [SerializeField] private int m_TimeLeft;
     private bool IsGameOver;
 
-    void Start()
+    private void Start()
     {
         StartCoroutine("TimerCountdown");
 		EventManager.Instance.Raise(new NewLevelIsGeneratedEvent());
+
+		MusicLoopsManager.Instance.PlayMusic(SongOfThisLevel);
     }
 
     // Coroutine for timer

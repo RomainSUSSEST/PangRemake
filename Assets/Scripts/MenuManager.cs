@@ -105,9 +105,24 @@ public class MenuManager : Manager<MenuManager>
 	#endregion
 
 	#region Callbacks to GameManager events
+
+	// Attributs
+
+	private bool FirstLaunchMenu = true;
+
+	
+	// Méthodes
+
 	protected override void GameMenu(GameMenuEvent e)
 	{
-		StartCoroutine("LaunchGameMenu");
+		if (FirstLaunchMenu)
+		{
+			FirstLaunchMenu = false;
+			StartCoroutine("LaunchGameMenu");
+		} else
+		{
+			OpenPanel(m_PanelMainMenu);
+		}
 	}
 
 	private IEnumerator LaunchGameMenu()
