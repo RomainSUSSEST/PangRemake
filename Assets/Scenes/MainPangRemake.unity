@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -30,7 +30,7 @@ RenderSettings:
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
-  m_HaloTexture: {fileID: 0}
+  m_HaloTexture: {fileID: 2800000, guid: 68e87655f8bcfca4db2934a3f281ef3c, type: 3}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
@@ -50,7 +50,7 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 2
+    m_MixedBakeMode: 0
     m_BakeBackend: 2
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 1921129358}
   - component: {fileID: 1921129357}
   - component: {fileID: 1921129356}
+  - component: {fileID: 1921129361}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -298,12 +299,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921129355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11, z: -27.99}
+  m_LocalPosition: {x: 0, y: 0, z: -27.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921129361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921129355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_RendererOverrideOption: 1
+  m_RendererData: {fileID: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &1171858397217489092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,68 +419,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
         type: 3}
-      propertyPath: m_LevelsPrefabs.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
       propertyPath: m_CountdownTimer
       value: 
       objectReference: {fileID: 2801619112370722842}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: f50ed5e13ed5f1147ac585b2531fe659,
-        type: 3}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: 648791a77e5ef924aa577c8d67426121,
-        type: 3}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: 512c59cd89533584dbc15209c66db8a9,
-        type: 3}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: 2689d4c9ba0ae8d478d4adb2bd1c72d7,
-        type: 3}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: 83de3dd930ef7c342b7b0ae44307b3d6,
-        type: 3}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: 8a4fa24d90efb594db7beaf90f61e93a,
-        type: 3}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[7]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: 115fdfcc030066f4caac5c18effb87e6,
-        type: 3}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[8]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: cc41454949ac9db419f16b6354592f51,
-        type: 3}
-    - target: {fileID: 1171858395771766760, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
-        type: 3}
-      propertyPath: m_LevelsPrefabs.Array.data[9]
-      value: 
-      objectReference: {fileID: 1812839432901584980, guid: 8fe460afe779e2e41a833067298981f1,
-        type: 3}
     - target: {fileID: 1171858396684603040, guid: 68480a01e4a00ab45b3d746ae2fc86ee,
         type: 3}
       propertyPath: currentScore

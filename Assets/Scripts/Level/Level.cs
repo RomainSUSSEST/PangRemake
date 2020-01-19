@@ -17,6 +17,7 @@ public class Level : MonoBehaviour, IEventHandler
 
 	[SerializeField] AudioClip SongOfThisLevel;
     [SerializeField] GameObject SpawnPlayer1;
+	[SerializeField] Material SkyBoxAttached;
 	private GameObject currentPlayer1; // Joueur 1
 
 	private bool LevelIsSkipped;
@@ -26,6 +27,11 @@ public class Level : MonoBehaviour, IEventHandler
 
     private void Start()
     {
+		if (RenderSettings.skybox != SkyBoxAttached && SkyBoxAttached != null)
+		{
+			RenderSettings.skybox = SkyBoxAttached;
+		}
+
         StartCoroutine("TimerCountdown");
 		EventManager.Instance.Raise(new NewLevelIsGeneratedEvent());
 

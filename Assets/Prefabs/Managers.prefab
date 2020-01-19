@@ -132,6 +132,15 @@ MonoBehaviour:
   m_DoNotDestroyGameObjectOnLoad: 0
   m_LevelsPrefabs:
   - {fileID: 1812839432901584980, guid: a0db09191c22c7b4ca2fa78570a9e37d, type: 3}
+  - {fileID: 1812839432901584980, guid: f50ed5e13ed5f1147ac585b2531fe659, type: 3}
+  - {fileID: 1812839432901584980, guid: 648791a77e5ef924aa577c8d67426121, type: 3}
+  - {fileID: 1812839432901584980, guid: 512c59cd89533584dbc15209c66db8a9, type: 3}
+  - {fileID: 1812839432901584980, guid: 2689d4c9ba0ae8d478d4adb2bd1c72d7, type: 3}
+  - {fileID: 3894309033841999356, guid: 83de3dd930ef7c342b7b0ae44307b3d6, type: 3}
+  - {fileID: 1812839432901584980, guid: 8a4fa24d90efb594db7beaf90f61e93a, type: 3}
+  - {fileID: 1812839432901584980, guid: 115fdfcc030066f4caac5c18effb87e6, type: 3}
+  - {fileID: 1812839432901584980, guid: cc41454949ac9db419f16b6354592f51, type: 3}
+  - {fileID: 1812839432901584980, guid: 8fe460afe779e2e41a833067298981f1, type: 3}
   PlayerPrefab: {fileID: 5557257332506137516, guid: f4efd681f50fe194eb8be2fbf0179c45,
     type: 3}
   m_CountdownTimer: {fileID: 0}
@@ -512,12 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyGameObjectOnLoad: 0
-  m_Clips:
-  - {fileID: 8300000, guid: 5e6b3f77fc09fef4db9a88d561cc8189, type: 3}
-  - {fileID: 8300000, guid: e1e1f0e6565b86a49adb64d0fd435684, type: 3}
-  - {fileID: 8300000, guid: 18fc0e399ffc63641b8c4cb50030cd6c, type: 3}
-  m_FadeDuration: 1
-  m_ShowGui: 0
+  MenuMusic: {fileID: 0}
 --- !u!82 &1171858397625354223
 AudioSource:
   m_ObjectHideFlags: 0
