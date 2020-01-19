@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1812839434889765925}
   - component: {fileID: 5355447024050122004}
   m_Layer: 0
-  m_Name: Level7
+  m_Name: JAPAN_LEVEL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 1268007115728101139, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.62
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 1268007115728101139, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
         type: 3}
@@ -428,7 +428,7 @@ PrefabInstance:
     - target: {fileID: 1268007115728101139, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.84
+      value: 3.23
       objectReference: {fileID: 0}
     - target: {fileID: 1268007115728101139, guid: 3b706b7c8e0607d418a7d5fbf3a43e12,
         type: 3}
