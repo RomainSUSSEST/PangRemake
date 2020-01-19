@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SongOfThisLevel: {fileID: 8300000, guid: 45f1d29774f09a04a89b5125c852daf6, type: 3}
   SpawnPlayer1: {fileID: 5768063010289246659}
-  m_TimeLeft: 120
+  m_TimeLeft: 210
 --- !u!1001 &626178592969172232
 PrefabInstance:
   m_ObjectHideFlags: 0
