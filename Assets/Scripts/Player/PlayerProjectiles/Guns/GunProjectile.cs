@@ -29,4 +29,9 @@ public class GunProjectile : PlayerProjectiles
     {
         Destroy(this.gameObject);
     }
+
+    public override void UndestructibleWallCollision()
+    {
+        Destroy(this.gameObject);
+    }
 }

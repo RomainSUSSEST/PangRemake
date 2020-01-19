@@ -12,7 +12,7 @@ public class UnDestructibleWall : MonoBehaviour
         // Si l'on rentre en collision avec un player projectile, on le détruit
         if (GameManager.Instance.IsPlaying && collision.gameObject.CompareTag(Tags.PLAYER_PROJECTILES) && !collision.gameObject.GetComponent<PlayerProjectiles>().IsDestroyed())
         {
-            collision.gameObject.GetComponent<PlayerProjectiles>().Kill();
+            collision.gameObject.GetComponent<PlayerProjectiles>().UndestructibleWallCollision();
         }
     }
 }

@@ -8,4 +8,9 @@ public class DefaultGrapnelProjectiles : GrapnelProjectiles
     {
         Destroy(this.gameObject);
     }
+
+    public override void UndestructibleWallCollision()
+    {
+        Destroy(this.gameObject);
+    }
 }
