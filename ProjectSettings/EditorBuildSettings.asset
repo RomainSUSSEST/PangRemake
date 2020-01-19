@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainPangRemake.unity
-    guid: d43105965de397f488df1a97b89bf3d2
+    guid: 1850fca84ee66ab49a1dae8eaf50d115
   m_configObjects: {}

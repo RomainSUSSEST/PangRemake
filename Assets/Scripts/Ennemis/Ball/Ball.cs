@@ -119,6 +119,7 @@ public abstract class Ball : SimpleGameStateObserver
 
             if (BoostIsActivate) // Si la boule a besoin d'un coups de boost
             {
+                Debug.Log("Boost !");
                 rb.velocity = new Vector2(rb.velocity.x, BOOST);
             }
             else // Sinon, on se contente de réactiver le boost.
