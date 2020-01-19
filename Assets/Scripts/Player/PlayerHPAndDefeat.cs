@@ -59,6 +59,8 @@ public class PlayerHPAndDefeat : MonoBehaviour
             float currentPlayerScore = GameManager.Instance.Score;
             float currentPlayerHighscore = HudManager.Instance.m_CurrentHighscore;
             string currentPlayerName = HudManager.Instance.currentPlayerName.text;
+            if (currentPlayerName == "")
+                currentPlayerName = "PLAYER";
 
             if (currentPlayerScore >= currentPlayerHighscore)
             {
